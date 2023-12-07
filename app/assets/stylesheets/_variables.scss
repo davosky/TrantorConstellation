@@ -1,0 +1,38 @@
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #ecf0f1 !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #b4bcc2 !default;
+$gray-600: #95a5a6 !default;
+$gray-700: #535d5e !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$blue: #0055d4 !default;
+$indigo: #7f2aff !default;
+$purple: #d400aa !default;
+$pink: #ff2a7f !default;
+$red: #d40000 !default;
+$orange: #a34200 !default;
+$yellow: #9e7f00 !default;
+$green: #2b6b00 !default;
+$teal: #009e7f !default;
+$cyan: #007f9e !default;
+
+$primary: $blue !default;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $orange !default;
+$danger: $red !default;
+$light: $gray-200 !default;
+$dark: $gray-700 !default;
+
+@font-face {
+  font-family: "Barlow-Regular";
+  font-style: normal;
+  font-weight: 300;
+  src: url("Barlow-Regular.ttf") format("truetype");
+}

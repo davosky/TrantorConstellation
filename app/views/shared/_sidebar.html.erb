@@ -1,0 +1,63 @@
+<div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-success
+ text-white offcanvas-md offcanvas-start">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag("sidebar/logos/sidebar_logo.svg", class: "img-fluid") %>
+  <% end %>
+  <hr>
+  <ul class="mynav nav nav-pills flex-column mb-auto">
+    <li class="nav-item mb-1">
+      <%= link_to home_index_path do %>
+        <i class="fa-solid fa-home"></i>
+        &nbsp;
+        HOME
+      <% end %>
+    </li>
+    <li class="sidebar-item  nav-item mb-1">
+      <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#settings" aria-expanded="false" aria-controls="settings">
+        <i class="fa-solid fa-home"></i>
+        &nbsp;
+        <span class="topic">HOME </span>
+      </a>
+      <ul id="settings" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+        <li class="sidebar-item">
+          <%= link_to home_index_path do %>
+            <i class="fa-solid fa-home"></i>
+            &nbsp;
+            HOME
+          <% end %>
+        </li>
+        <li class="sidebar-item">
+          <%= link_to home_credits_path do %>
+            <i class="fa-solid fa-user-tie"></i>
+            &nbsp;
+            CREDITS
+          <% end %>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <hr>
+  <div class="d-flex">
+    <div class="dropdown pb-4">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <%= image_tag("sidebar/icons/sidebar_user_icon.svg", class: "rounded-circle img-fluid") %>
+        &nbsp;
+        <span class="d-none d-sm-inline mx-1">Trantor</span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+        <% unless !admin %>
+          <%= link_to rails_admin_path, class: "dropdown-item" do %>
+            <i class="fa-solid fa-cogs"></i>
+            &nbsp;
+            AMMINISTRAZIONE
+          <% end %>
+        <% end %>
+        <%= link_to destroy_operator_session_path, method: :get, class: "dropdown-item" do %>
+          <i class="fa-solid fa-door-open"></i>
+          &nbsp;
+          EXIT
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
