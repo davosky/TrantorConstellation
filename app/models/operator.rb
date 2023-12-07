@@ -9,4 +9,6 @@ class Operator < ApplicationRecord
   belongs_to :category, optional: :turue
   belongs_to :institute, optional: :turue
   belongs_to :office, optional: :turue
+
+  has_many :veichles
 end

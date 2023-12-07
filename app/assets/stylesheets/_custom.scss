@@ -4,6 +4,15 @@ body {
   font-family: "Barlow-Regular", sans-serif;
   font-weight: 400;
   font-size: 12pt;
+
+  a {
+    text-decoration: none;
+    color: $success;
+
+    &:hover {
+      color: $danger;
+    }
+  }
 }
 
 .gfg {
@@ -50,4 +59,16 @@ body {
 
 .text-justified {
   text-align: justify !important;
+}
+
+.input-group-text-fixed-lenght {
+  min-width: 10rem;
+}
+
+.nav-link {
+  color: $success;
+
+  &:hover {
+    color: $danger;
+  }
 }

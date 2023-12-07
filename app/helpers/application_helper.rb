@@ -3,6 +3,8 @@ module ApplicationHelper
     case controller
     when "home"
       "shared/navbar_content_home"
+    when "veichles"
+      "shared/navbar_content_veichles"
     else
       "shared/navbar_content_generic"
     end

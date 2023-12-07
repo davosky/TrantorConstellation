@@ -14,6 +14,7 @@ it:
       office: Ufficio
       province: Provincia
       region: Regione
+      veichle: Veicolo
     simple_calendar:
       previous: "<<"
       next: ">>"
@@ -42,6 +43,7 @@ it:
         supervisor: Supervisore
         manager: Direttore
         regular: Operatore
+        veichles: Veicoli
       category:
         name: Categoria
         description: Descrizione
@@ -61,6 +63,11 @@ it:
       region:
         name: Regione
         description: Descrizione
+        position: Posizione
+      veichle:
+        producer: Produttore
+        model: Modello
+        license_plate: Targa
         position: Posizione
     errors:
       messages:

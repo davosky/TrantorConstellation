@@ -43,6 +43,12 @@ RailsAdmin.config do |config|
     label_plural "Regioni"
   end
 
+  config.model "Veichle" do
+    visible true
+    label "Veicolo"
+    label_plural "Veicoli"
+  end
+
   ### Popular gems integration
 
   ## == Devise ==

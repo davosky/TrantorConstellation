@@ -14,23 +14,16 @@
     </li>
     <li class="sidebar-item  nav-item mb-1">
       <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#settings" aria-expanded="false" aria-controls="settings">
-        <i class="fa-solid fa-home"></i>
+        <i class="fa-solid fa-cog"></i>
         &nbsp;
-        <span class="topic">HOME </span>
+        <span class="topic">MODULI</span>
       </a>
       <ul id="settings" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
         <li class="sidebar-item">
-          <%= link_to home_index_path do %>
-            <i class="fa-solid fa-home"></i>
+          <%= link_to veichles_path do %>
+            <i class="fa-solid fa-car"></i>
             &nbsp;
-            HOME
-          <% end %>
-        </li>
-        <li class="sidebar-item">
-          <%= link_to home_credits_path do %>
-            <i class="fa-solid fa-user-tie"></i>
-            &nbsp;
-            CREDITS
+            VEICOLI
           <% end %>
         </li>
       </ul>

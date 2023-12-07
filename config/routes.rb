@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "home/index"
   get "home/credits"
 
+  resources :veichles
+
   devise_for :operators, skip: [:registrations]
   as :user do
     get "operators/edit" => "devise/registrations#edit", :as => "edit_user_registration"
