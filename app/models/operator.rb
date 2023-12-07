@@ -11,4 +11,14 @@ class Operator < ApplicationRecord
   belongs_to :office, optional: :turue
 
   has_many :veichles
+
+  before_create :set_id
+
+  def set_id
+    last_id = Operator.maximum(:id)
+    self.id = last_id.to_i + 1
+  end
+
+  validates :username, uniqueness: true
+  validates :username, :email, :first_name, :last_name, :category_id, :region_id, :province_id, :institute_id, :office_id, presence: true
 end
