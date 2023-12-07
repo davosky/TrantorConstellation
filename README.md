@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+TrantorConstellation the TrantorFoundation successor
 
-Things you may want to cover:
+Litle WebApp to manage absences, permits, vacations, overtime and reimbusments
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Using RubyOnRails framework and Postgresql
