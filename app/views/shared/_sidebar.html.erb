@@ -13,24 +13,55 @@
       <% end %>
     </li>
     <li class="sidebar-item  nav-item mb-1">
-      <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#settings" aria-expanded="false" aria-controls="settings">
+      <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#reimbursments" aria-expanded="false" aria-controls="reimbursments">
+        <i class="fa-solid fa-receipt"></i>
+        &nbsp;
+        <span class="topic">RIMBORSI</span>
+      </a>
+      <ul id="reimbursments" class="sidebar-dropdown list-unstyled collapse bg-dark rounded border border-light" data-bs-parent="#sidebar">
+        <li class="sidebar-item">
+          <%= link_to "#" do %>
+            <i class="fa-solid fa-receipt"></i>
+            &nbsp;
+            Rimborsi
+          <% end %>
+        </li>
+        <li class="sidebar-item">
+          <hr class="text-white">
+        </li>
+        <li class="sidebar-item px-2 mb-2 text-success-light">
+          <i class="fa-solid fa-repeat"></i>
+          &nbsp;
+          ricorsivi
+        </li>
+        <li class="sidebar-item">
+          <%= link_to mission_paths_path do %>
+            <i class="fa-solid fa-map-location-dot"></i>
+            &nbsp;
+            Percorsi Missione
+          <% end %>
+        </li>
+      </ul>
+    </li>
+    <li class="sidebar-item  nav-item mb-1">
+      <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#modules" aria-expanded="false" aria-controls="modules">
         <i class="fa-solid fa-cog"></i>
         &nbsp;
         <span class="topic">MODULI</span>
       </a>
-      <ul id="settings" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+      <ul id="modules" class="sidebar-dropdown list-unstyled collapse bg-dark rounded border border-light" data-bs-parent="#sidebar">
         <li class="sidebar-item">
           <%= link_to veichles_path do %>
             <i class="fa-solid fa-car"></i>
             &nbsp;
-            VEICOLI
+            Veicoli
           <% end %>
         </li>
         <li class="sidebar-item">
           <%= link_to transports_path do %>
             <i class="fa-solid fa-train"></i>
             &nbsp;
-            TRASPORTI
+            Trasporti
           <% end %>
         </li>
       </ul>

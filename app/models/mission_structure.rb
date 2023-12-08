@@ -1,0 +1,2 @@
+class MissionStructure < ApplicationRecord
+end

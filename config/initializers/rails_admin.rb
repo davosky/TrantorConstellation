@@ -55,6 +55,30 @@ RailsAdmin.config do |config|
     label_plural "Trasporti"
   end
 
+  config.model "MissionPath" do
+    visible true
+    label "Percorso Missione "
+    label_plural "Percorsi Missione"
+  end
+
+  config.model "MissionReason" do
+    visible true
+    label "Motivo Missione "
+    label_plural "Motivi Missione"
+  end
+
+  config.model "MissionPlace" do
+    visible true
+    label "Luogo Missione "
+    label_plural "Luoghi Missione"
+  end
+
+  config.model "MissionStructure" do
+    visible true
+    label "Struttura Missione "
+    label_plural "Strutture Missione"
+  end
+
   ### Popular gems integration
 
   ## == Devise ==

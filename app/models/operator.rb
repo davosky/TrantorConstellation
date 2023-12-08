@@ -12,6 +12,7 @@ class Operator < ApplicationRecord
 
   has_many :veichles
   has_many :transports
+  has_many :mission_paths
 
   mount_uploader :signature, SignatureUploader
   mount_uploader :validator_signature, ValidatorSignatureUploader

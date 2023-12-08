@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   resources :veichles
   resources :transports
+  resources :mission_reasons
+  resources :mission_paths
+  resources :mission_places
+  resources :mission_structures
 
   devise_for :operators, skip: [:registrations]
   as :operator do

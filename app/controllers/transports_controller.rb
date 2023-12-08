@@ -20,7 +20,7 @@ class TransportsController < ApplicationController
     @transport = current_operator.transports.build(transport_params)
 
     if @transport.save
-      redirect_to transports_path, notice: "transport was successfully created."
+      redirect_to transports_path, notice: "Trasporto creato con successo."
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class TransportsController < ApplicationController
       redirect_to transports_url, notice: "Record di sistema non cancellabile"
     else
       if @transport.update(transport_params)
-        redirect_to transports_path, notice: "transport was successfully updated."
+        redirect_to transports_path, notice: "Trasporto modificato con successo."
       else
         render :edit, status: :unprocessable_entity
       end
@@ -43,7 +43,7 @@ class TransportsController < ApplicationController
       redirect_to transports_url, notice: "Record di sistema non cancellabile"
     else
       @transport.destroy
-      redirect_to transports_url, notice: "transport was successfully destroyed."
+      redirect_to transports_url, notice: "Trasporto eliminato con successo."
     end
   end
 

@@ -1,0 +1,2 @@
+class MissionPlace < ApplicationRecord
+end

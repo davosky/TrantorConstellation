@@ -20,7 +20,7 @@ class VeichlesController < ApplicationController
     @veichle = current_operator.veichles.build(veichle_params)
 
     if @veichle.save
-      redirect_to veichles_path, notice: "veichle was successfully created."
+      redirect_to veichles_path, notice: "Veicolo creato con successo."
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class VeichlesController < ApplicationController
 
   def update
     if @veichle.update(veichle_params)
-      redirect_to veichles_path, notice: "veichle was successfully updated."
+      redirect_to veichles_path, notice: "Veicolo modificato con successo."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class VeichlesController < ApplicationController
 
   def destroy
     @veichle.destroy
-    redirect_to veichles_url, notice: "veichle was successfully destroyed."
+    redirect_to veichles_url, notice: "Veicolo eliminato con successo."
   end
 
   private

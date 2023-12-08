@@ -1,0 +1,49 @@
+  <%= turbo_frame_tag :remote_modal, target: :_top do %>
+  <div class="col-6 offset-3 p-3 border border-success rounded">
+    <div class="row">
+      <div class="col">
+        <span class="text-success">
+          <i class="fa-solid fa-map-location-dot"></i>
+          &emsp;
+          Percorso Missione:
+        </span>
+        &emsp;
+        <%= @mission_path.path %>
+        <hr class="text-success"/>
+        <span class="text-success">
+          <i class="fa-solid fa-ruler-horizontal"></i>
+          &emsp;
+          Lunghezza Percorso:
+        </span>
+        &emsp;
+        <%= @mission_path.road_lenght %>&nbsp;Km
+        <hr class="text-success"/>
+        <span class="text-success">
+          <i class="fa-solid fa-coins"></i>
+          &emsp;
+          Pedaggio Autostradale:
+        </span>
+        &emsp;
+        <%= @mission_path.highway_cost %>&nbsp;&euro;
+        <hr class="text-success"/>
+        <span class="text-success">
+          <i class="fa-solid fa-arrow-up-9-1"></i>
+          &emsp;
+          Posizione in Scaletta:
+        </span>
+        &emsp;
+        <%= @mission_path.position %>
+        <hr class="text-success"/>
+        <span class="float-end">
+          <%= link_to mission_paths_path, class: "btn btn-outline-success btn-sm" do %>
+            <i class="fa-solid fa-arrow-left"></i>
+            &nbsp;
+            <i class="fa-solid fa-list"></i>
+            &emsp;
+            Ritorna alla Lista
+          <% end %>
+        </span>
+      </div>
+    </div>
+  </div>
+<% end %>

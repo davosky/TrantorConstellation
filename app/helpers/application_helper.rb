@@ -7,6 +7,8 @@ module ApplicationHelper
       "shared/navbar_content_veichles"
     when "transports"
       "shared/navbar_content_transports"
+    when "mission_paths"
+      "shared/navbar_content_mission_paths"
     else
       "shared/navbar_content_generic"
     end

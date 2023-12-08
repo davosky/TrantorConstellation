@@ -16,6 +16,10 @@ it:
       region: Regione
       veichle: Veicolo
       transport: Trasporto
+      mission_path: Percorso Missione
+      mission_place: Luogo Missione
+      mission_reason: Motivo Missione
+      mission_structure: Struttura Missione
     simple_calendar:
       previous: "<<"
       next: ">>"
@@ -53,6 +57,10 @@ it:
         signature: Firma Operatore
         validator_signature: Firma Firmatario
         organizational_signature: Firma Organizzativo
+        mission_paths: Percorsi Missione
+        mission_places: Luoghi Missione
+        mission_reasons: Motivi Missione
+        mission_structures: Strutture Missione
       category:
         name: Categoria
         description: Descrizione
@@ -80,6 +88,24 @@ it:
         position: Posizione
       transport:
         name: Trasporto
+        position: Posizione
+        operator: Operatore
+      mission_path:
+        path: Percorso Missione
+        road_lenght: Lunghezza Percorso
+        highway_cost: Pedaggio Autostrada
+        position: Posizione
+        operator: Operatore
+      mission_place:
+        name: Luogo Missione
+        position: Posizione
+        operator: Operatore
+      mission_reason:
+        name: Motivo Missione
+        position: Posizione
+        operator: Operatore
+      mission_structure:
+        name: Struttura Missione
         position: Posizione
         operator: Operatore
     errors:

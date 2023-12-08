@@ -62,7 +62,7 @@ body {
 }
 
 .input-group-text-fixed-lenght {
-  min-width: 10rem;
+  min-width: 12rem;
 }
 
 .nav-link {
@@ -71,4 +71,8 @@ body {
   &:hover {
     color: $danger;
   }
+}
+
+.text-success-light {
+  color: $green-light !important;
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 11) do
+ActiveRecord::Schema[7.1].define(version: 15) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,40 @@ ActiveRecord::Schema[7.1].define(version: 11) do
     t.string "name"
     t.string "description"
     t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mission_paths", force: :cascade do |t|
+    t.string "path"
+    t.decimal "road_lenght", precision: 8, scale: 2, default: "0.0"
+    t.decimal "highway_cost", precision: 8, scale: 2, default: "0.0"
+    t.integer "position"
+    t.integer "operator_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mission_places", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.integer "operator_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mission_reasons", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.integer "operator_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mission_structures", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.integer "operator_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
