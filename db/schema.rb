@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 9) do
+ActiveRecord::Schema[7.1].define(version: 11) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,6 +58,14 @@ ActiveRecord::Schema[7.1].define(version: 9) do
     t.bigint "category_id"
     t.bigint "institute_id"
     t.bigint "office_id"
+    t.string "validator"
+    t.string "validator_presentation"
+    t.string "organizational"
+    t.string "organizational_presentation"
+    t.decimal "cost_per_km", precision: 8, scale: 2, default: "0.0"
+    t.string "signature"
+    t.string "validator_signature"
+    t.string "organizational_signature"
     t.index ["category_id"], name: "index_operators_on_category_id"
     t.index ["institute_id"], name: "index_operators_on_institute_id"
     t.index ["office_id"], name: "index_operators_on_office_id"

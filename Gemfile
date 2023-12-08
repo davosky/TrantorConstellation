@@ -4,15 +4,19 @@ ruby "3.2.2"
 
 gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", require: false
+gem "carrierwave", "~> 3.0"
 gem "cssbundling-rails"
 gem "devise", "~> 4.9"
+gem "devise-i18n", "~> 1.12"
 gem "image_processing", "~> 1.2"
 gem "jbuilder"
 gem "jsbundling-rails"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 gem "rails", "~> 7.1.2"
+gem "rails-i18n", "~> 7.0"
 gem "rails_admin", "~> 3.1"
+gem "rails_admin-i18n", "~> 1.20"
 gem "redis", ">= 4.0.1"
 gem "sassc-rails"
 gem "sprockets-rails"
@@ -30,16 +34,9 @@ group :development do
   gem "rubocop"
   gem "solargraph"
   gem "web-console"
-
 end
 
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
-gem "devise-i18n", "~> 1.12"
-
-gem "rails_admin-i18n", "~> 1.20"
-
-gem "rails-i18n", "~> 7.0"

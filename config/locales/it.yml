@@ -46,6 +46,13 @@ it:
         regular: Operatore
         veichles: Veicoli
         transports: Trasporti
+        validator: Firmatario
+        validator_presentation: Titolo Firmatario
+        organizational: Organizzativo
+        organizational_presentation: Titolo Organizzativo
+        signature: Firma Operatore
+        validator_signature: Firma Firmatario
+        organizational_signature: Firma Organizzativo
       category:
         name: Categoria
         description: Descrizione
@@ -74,6 +81,7 @@ it:
       transport:
         name: Trasporto
         position: Posizione
+        operator: Operatore
     errors:
       messages:
         record_invalid: "Validazione fallita: %{errors}"
