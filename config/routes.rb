@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   get "home/credits"
 
   resources :veichles
+  resources :transports
 
   devise_for :operators, skip: [:registrations]
-  as :user do
-    get "operators/edit" => "devise/registrations#edit", :as => "edit_user_registration"
-    put "operators" => "devise/registrations#update", :as => "user_registration"
+  as :operator do
+    get "operators/edit" => "devise/registrations#edit", :as => "edit_operator_registration"
+    put "operators" => "devise/registrations#update", :as => "operator_registration"
   end
 
   mount RailsAdmin::Engine => "/admin", as: "rails_admin"

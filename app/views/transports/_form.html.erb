@@ -1,0 +1,49 @@
+<div class="col-6 offset-3 p-3 border border-success rounded">
+  <%= form_with(model: transport) do |form| %>
+    <% if transport.errors.any? %>
+      <div style="color: red">
+        <h4>
+          Errore!&emsp;Non posso salvare per i seguenti motivi:
+        </h4>
+        <ul>
+          <% transport.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="input-group mb-1">
+      <span class="input-group-text text-success input-group-text-fixed-lenght">
+        <i class="fa-solid fa-train"></i>
+        &nbsp;&nbsp;
+        <%= form.label :name %>
+      </span>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="input-group mb-2">
+      <span class="input-group-text text-success input-group-text-fixed-lenght">
+        <i class="fa-solid fa-arrow-up-9-1"></i>
+        &nbsp;&nbsp;
+        <%= form.label :position %>
+      </span>
+      <%= form.number_field :position, class: 'form-control' %>
+    </div>
+    <div class="d-grid">
+      <%= form.submit class: 'btn btn-outline-success' %>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col">
+      <br/>
+      <span class="float-end">
+        <%= link_to transports_path, class: "btn btn-outline-success btn-sm" do %>
+          <i class="fa-solid fa-arrow-left"></i>
+          &nbsp;
+          <i class="fa-solid fa-list"></i>
+          &emsp;
+          Ritorna alla Lista
+        <% end %>
+      </span>
+    </div>
+  </div>
+</div>

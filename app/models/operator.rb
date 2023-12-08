@@ -11,6 +11,7 @@ class Operator < ApplicationRecord
   belongs_to :office, optional: :turue
 
   has_many :veichles
+  has_many :transports
 
   before_create :set_id
 

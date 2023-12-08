@@ -15,6 +15,7 @@ it:
       province: Provincia
       region: Regione
       veichle: Veicolo
+      transport: Trasporto
     simple_calendar:
       previous: "<<"
       next: ">>"
@@ -44,6 +45,7 @@ it:
         manager: Direttore
         regular: Operatore
         veichles: Veicoli
+        transports: Trasporti
       category:
         name: Categoria
         description: Descrizione
@@ -68,6 +70,9 @@ it:
         producer: Produttore
         model: Modello
         license_plate: Targa
+        position: Posizione
+      transport:
+        name: Trasporto
         position: Posizione
     errors:
       messages:
