@@ -3,39 +3,23 @@
     <div class="row">
       <div class="col">
         <span class="text-success">
-          <i class="fa-solid fa-car"></i>
+          <i class="fa-solid fa-train"></i>
           &emsp;
-          Modello:
+          Trasporto:
         </span>
         &emsp;
-        <%= @veichle.model %>
+        <%= @transport.name %>
         <hr class="text-success"/>
-        <span class="text-success">
-          <i class="fa-solid fa-industry"></i>
-          &emsp;
-          Produttore:
-        </span>
-        &emsp;
-        <%= @veichle.producer %>
-        <hr class="text-success"/>
-        <span class="text-success">
-          <i class="fa-solid fa-credit-card"></i>
-          &emsp;
-          Targa:
-        </span>
-        &emsp;
-        <%= @veichle.license_plate %>
-        <hr class="bg-success"/>
         <span class="text-success">
           <i class="fa-solid fa-arrow-up-9-1"></i>
           &emsp;
           Posizione in Scaletta:
         </span>
         &emsp;
-        <%= @veichle.position %>
+        <%= @transport.position %>
         <hr class="text-success"/>
         <span class="float-end">
-          <%= link_to veichles_path, class: "btn btn-outline-success btn-sm" do %>
+          <%= link_to transports_path, class: "btn btn-outline-success btn-sm" do %>
             <i class="fa-solid fa-arrow-left"></i>
             &nbsp;
             <i class="fa-solid fa-list"></i>
