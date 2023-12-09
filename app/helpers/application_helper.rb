@@ -9,6 +9,8 @@ module ApplicationHelper
       "shared/navbar_content_transports"
     when "mission_paths"
       "shared/navbar_content_mission_paths"
+    when "mission_places"
+      "shared/navbar_content_mission_places"
     else
       "shared/navbar_content_generic"
     end

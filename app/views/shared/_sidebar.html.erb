@@ -41,6 +41,13 @@
             Percorsi Missione
           <% end %>
         </li>
+        <li class="sidebar-item">
+          <%= link_to mission_places_path do %>
+            <i class="fa-solid fa-city"></i>
+            &nbsp;
+            Luoghi Missione
+          <% end %>
+        </li>
       </ul>
     </li>
     <li class="sidebar-item  nav-item mb-1">
@@ -83,10 +90,11 @@
             AMMINISTRAZIONE
           <% end %>
         <% end %>
+        <hr class="p-1"/>
         <%= link_to destroy_operator_session_path, method: :get, class: "dropdown-item" do %>
           <i class="fa-solid fa-door-open"></i>
           &nbsp;
-          EXIT
+          USCITA
         <% end %>
       </ul>
     </div>

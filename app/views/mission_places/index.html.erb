@@ -1,0 +1,39 @@
+<div class="col-6 offset-3 p-3 border border-success rounded">
+  <table class="table table-light table-hover rounded">
+    <thead>
+      <th><i class="fa-solid fa-city text-success" data-bs-toggle="tooltip" title="Luogo Missione"></i></th>
+      <th><i class="fa-solid fa-arrow-up-9-1 text-success" data-bs-toggle="tooltip" title="Posizione"></i></th>
+      <th colspan=2></th>
+    </thead>
+    <tbody>
+      <% @mission_places.each do |mission_place| %>
+        <tr>
+          <td>
+            <%= link_to mission_place_path(mission_place), "data-controller": "turbo", 
+            "data-bs-toggle": "tooltip", 
+            "title": "Visualizza il record corrente" do %>
+              <%= mission_place.name %>
+            <% end %>
+          </td>
+          <td><%= mission_place.position %></td>
+          <td>
+            <%= link_to edit_mission_place_path(mission_place), "data-controller": "turbo", 
+            "data-bs-toggle": "tooltip", 
+            "title": "Modifica il Record Corrente", class: "edit-link" do %>
+              <i class="fa-solid fa-pen-to-square"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to mission_place_path(mission_place),
+            "data-turbo-method": :delete,
+            "data-turbo-confirm": "Sicuri di voler eliminare il record corrente?" , 
+            "data-bs-toggle": "tooltip", 
+            "title": "Elimina il Record Corrente", class: "delete-link" do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
