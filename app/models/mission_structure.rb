@@ -4,7 +4,7 @@ class MissionStructure < ApplicationRecord
   before_create :set_id
 
   def set_id
-    last_id = MissionPlace.maximum(:id)
+    last_id = MissionStructure.maximum(:id)
     self.id = last_id.to_i + 1
   end
 

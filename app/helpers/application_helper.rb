@@ -11,6 +11,10 @@ module ApplicationHelper
       "shared/navbar_content_mission_paths"
     when "mission_places"
       "shared/navbar_content_mission_places"
+    when "mission_reasons"
+      "shared/navbar_content_mission_reasons"
+    when "mission_structures"
+      "shared/navbar_content_mission_structures"
     else
       "shared/navbar_content_generic"
     end
