@@ -1,34 +1,30 @@
 <div class="col-6 offset-3 p-3 border border-success rounded">
   <table class="table table-light table-hover rounded">
     <thead>
-      <th><i class="fa-solid fa-road text-success" data-bs-toggle="tooltip" title="Percorso Missione"></i></th>
-      <th><i class="fa-solid fa-ruler-horizontal text-success" data-bs-toggle="tooltip" title="Lunghezza Percorso"></i></th>
-      <th><i class="fa-solid fa-coins text-success" data-bs-toggle="tooltip" title="Pedaggio Autostrada"></i></th>
+      <th><i class="fa-solid fa-train text-success" data-bs-toggle="tooltip" title="Modello"></i></th>
       <th><i class="fa-solid fa-arrow-up-9-1 text-success" data-bs-toggle="tooltip" title="Posizione"></i></th>
       <th colspan=2></th>
     </thead>
     <tbody>
-      <% @mission_paths.each do |mission_path| %>
+      <% @reimbursements.each do |reimbursement| %>
         <tr>
           <td>
-            <%= link_to mission_path_path(mission_path), "data-controller": "turbo", 
+            <%= link_to reimbursement_path(reimbursement), "data-controller": "turbo", 
             "data-bs-toggle": "tooltip", 
             "title": "Visualizza il record corrente" do %>
-              <%= mission_path.path %>
+              <%= reimbursement.reimbursement_number %>
             <% end %>
           </td>
-          <td><%= mission_path.road_lenght %>&nbsp;Km</td>
-          <td><%= mission_path.highway_cost %>&nbsp;&euro;</td>
-          <td><%= mission_path.position %></td>
+          <td><%= reimbursement.departure_date %></td>
           <td>
-            <%= link_to edit_mission_path_path(mission_path), "data-controller": "turbo", 
+            <%= link_to edit_reimbursement_path(reimbursement), "data-controller": "turbo", 
             "data-bs-toggle": "tooltip", 
             "title": "Modifica il Record Corrente", class: "edit-link" do %>
               <i class="fa-solid fa-pen-to-square"></i>
             <% end %>
           </td>
           <td>
-            <%= link_to mission_path_path(mission_path),
+            <%= link_to reimbursement_path(reimbursement),
             "data-turbo-method": :delete,
             "data-turbo-confirm": "Sicuri di voler eliminare il record corrente?" , 
             "data-bs-toggle": "tooltip", 

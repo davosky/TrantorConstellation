@@ -255,6 +255,10 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.1.0)
+    ransack (4.1.1)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     rbs (2.8.4)
     rdoc (6.6.0)
       psych (>= 4.0.0)
@@ -372,12 +376,14 @@ DEPENDENCIES
   image_processing (~> 1.2)
   jbuilder
   jsbundling-rails
+  kaminari (~> 1.2)
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.2)
   rails-i18n (~> 7.0)
   rails_admin (~> 3.1)
   rails_admin-i18n (~> 1.20)
+  ransack (~> 4.1)
   redis (>= 4.0.1)
   rubocop
   rufo

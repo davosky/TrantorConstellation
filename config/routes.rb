@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :mission_paths
   resources :mission_places
   resources :mission_structures
+  resources :reimbursements
 
   devise_for :operators, skip: [:registrations]
   as :operator do

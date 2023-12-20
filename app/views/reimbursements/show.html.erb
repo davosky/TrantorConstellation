@@ -3,28 +3,12 @@
     <div class="row">
       <div class="col">
         <span class="text-success">
-          <i class="fa-solid fa-road"></i>
+          <i class="fa-solid fa-train"></i>
           &emsp;
-          Percorso Missione:
+          Trasporto:
         </span>
         &emsp;
-        <%= @mission_path.path %>
-        <hr class="text-success"/>
-        <span class="text-success">
-          <i class="fa-solid fa-ruler-horizontal"></i>
-          &emsp;
-          Lunghezza Percorso:
-        </span>
-        &emsp;
-        <%= @mission_path.road_lenght %>&nbsp;Km
-        <hr class="text-success"/>
-        <span class="text-success">
-          <i class="fa-solid fa-coins"></i>
-          &emsp;
-          Pedaggio Autostradale:
-        </span>
-        &emsp;
-        <%= @mission_path.highway_cost %>&nbsp;&euro;
+        <%= @reimbursement.reimbursement_number %>
         <hr class="text-success"/>
         <span class="text-success">
           <i class="fa-solid fa-arrow-up-9-1"></i>
@@ -32,10 +16,10 @@
           Posizione in Scaletta:
         </span>
         &emsp;
-        <%= @mission_path.position %>
+        <%= @reimbursement.departure_date %>
         <hr class="text-success"/>
         <span class="float-end">
-          <%= link_to mission_paths_path, class: "btn btn-outline-success btn-sm" do %>
+          <%= link_to reimbursements_path, class: "btn btn-outline-success btn-sm" do %>
             <i class="fa-solid fa-arrow-left"></i>
             &nbsp;
             <i class="fa-solid fa-list"></i>

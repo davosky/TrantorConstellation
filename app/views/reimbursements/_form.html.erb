@@ -1,0 +1,150 @@
+<div class="col-10 offset-1 p-3 border border-success rounded form-bg">
+  <%= form_with(model: reimbursement) do |form| %>
+    <% if reimbursement.errors.any? %>
+      <div style="color: red">
+        <h4>
+          Errore!&emsp;Non posso salvare per i seguenti motivi:
+        </h4>
+        <ul>
+          <% reimbursement.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="col"><!-- LEFT -->
+        <div class="input-group mb-2">
+          <span class="input-group-text text-success input-group-text-fixed-lenght">
+            <i class="fa-solid fa-calendar-day"></i>
+            &nbsp;&nbsp;
+            <%= form.label :departure_date %>
+          </span>
+          <%= form.date_field :departure_date, class: "form-control" %>
+        </div>
+        <div class="input-group mb-2">
+          <span class="input-group-text text-success input-group-text-fixed-lenght">
+            <i class="fa-solid fa-calendar-day"></i>
+            &nbsp;&nbsp;
+            <%= form.label :return_date %>
+          </span>
+          <%= form.date_field :return_date, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col"><!-- RIGHT -->
+        <div class="input-group mb-2">
+          <span class="input-group-text text-success input-group-text-fixed-lenght">
+            <i class="fa-solid fa-calendar-day"></i>
+            &nbsp;&nbsp;
+            <%= form.label :request_date %>
+          </span>
+          <%= form.date_field :request_date, class: "form-control" %>
+        </div>
+        <div class="input-group mb-2">
+          <span class="input-group-text text-success input-group-text-fixed-lenght">
+            <i class="fa-solid fa-calendar-day"></i>
+            &nbsp;&nbsp;
+            <%= form.label :reimbursement_date %>
+          </span>
+          <%= form.date_field :reimbursement_date, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    <hr class="text-success"/>
+    <div class="row mb-1">
+      <div class="col">
+        <div class="input-group mb-1">
+          <span class="input-group-text text-success input-group-text-fixed-lenght">
+            <i class="fa-solid fa-bus"></i>
+            &nbsp;&nbsp;
+            <%= form.label :transport %>
+          </span>
+          <%= form.collection_select(:transport_id, Transport.where(operator_id: current_operator.id).order(position: "ASC"), :id, :name, {:include_blank => true}, {:class => "form-select"}) %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-1">
+          <span class="input-group-text text-success input-group-text-fixed-lenght">
+            <i class="fa-solid fa-car"></i>
+            &nbsp;&nbsp;
+            <%= form.label :veichle %>
+          </span>
+          <%= form.collection_select(:veichle_id, Veichle.where(operator_id: current_operator.id).order(position: "ASC"), :id, :model, {:include_blank => true}, {:class => "form-select"}) %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-1">
+          <span class="input-group-text text-success input-group-text-fixed-lenght">
+            <i class="fa-solid fa-square-parking"></i>
+            &nbsp;&nbsp;
+            <%= form.label :parking_cost %>
+          </span>
+          <%= form.number_field :parking_cost, step: 0.01, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-1">
+      <div class="col">
+        <div class="input-group mb-1">
+          <span class="input-group-text text-success input-group-text-fixed-lenght">
+            <i class="fa-solid fa-utensils"></i>
+            &nbsp;&nbsp;
+            <%= form.label :food_cost %>
+          </span>
+          <%= form.number_field :food_cost, step: 0.01, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-1">
+          <span class="input-group-text text-success input-group-text-fixed-lenght">
+            <i class="fa-solid fa-bed"></i>
+            &nbsp;&nbsp;
+            <%= form.label :room_cost %>
+          </span>
+          <%= form.number_field :room_cost, step: 0.01, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-1">
+          <span class="input-group-text text-success input-group-text-fixed-lenght">
+            <i class="fa-solid fa-receipt"></i>
+            &nbsp;&nbsp;
+            <%= form.label :ticket_cost %>
+          </span>
+          <%= form.number_field :ticket_cost, step: 0.01, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-1">
+          <span class="input-group-text text-success input-group-text-fixed-lenght">
+            <i class="fa-solid fa-credit-card"></i>
+            &nbsp;&nbsp;
+            <%= form.label :generic_cost %>
+          </span>
+          <%= form.number_field :generic_cost, step: 0.01, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-4 offset-4">
+        <div class="d-grid">
+          <%= form.submit class: "btn btn-outline-success" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="row mt-1">
+    <div class="col">
+      <br/>
+      <span class="float-end">
+        <%= link_to reimbursements_path, class: "btn btn-outline-success btn-sm" do %>
+          <i class="fa-solid fa-arrow-left"></i>
+          &nbsp;
+          <i class="fa-solid fa-list"></i>
+          &emsp;
+          Ritorna alla Lista
+        <% end %>
+      </span>
+    </div>
+  </div>
+</div>

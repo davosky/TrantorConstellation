@@ -75,8 +75,14 @@ RailsAdmin.config do |config|
 
   config.model "MissionStructure" do
     visible true
-    label "Struttura Missione "
+    label "Struttura Missione"
     label_plural "Strutture Missione"
+  end
+
+  config.model "Reimbursement" do
+    visible true
+    label "Rimborso"
+    label_plural "Rimborsi"
   end
 
   ### Popular gems integration

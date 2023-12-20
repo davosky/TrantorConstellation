@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def admin
+    current_operator.admin == true
+  end
+
   def navbar_content(controller)
     case controller
     when "home"
@@ -15,12 +19,10 @@ module ApplicationHelper
       "shared/navbar_content_mission_reasons"
     when "mission_structures"
       "shared/navbar_content_mission_structures"
+    when "reimbursements"
+      "shared/navbar_content_reimbursements"
     else
       "shared/navbar_content_generic"
     end
-  end
-
-  def admin
-    current_operator.admin == true
   end
 end

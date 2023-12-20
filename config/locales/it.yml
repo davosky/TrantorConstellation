@@ -20,6 +20,7 @@ it:
       mission_place: Luogo Missione
       mission_reason: Motivo Missione
       mission_structure: Struttura Missione
+      reimbursement: Rimborso
     simple_calendar:
       previous: "<<"
       next: ">>"
@@ -108,6 +109,34 @@ it:
         name: Struttura Missione
         position: Posizione
         operator: Operatore
+      reimbursement:
+        reimbursement_number: Numero Rimborso
+        departure_date: Data Partenza
+        return_date: Data Rientro
+        request_date: Data Richiesta
+        reimbursement_date: Data Rimborso
+        parking_cost: Parcheggio
+        food_cost: Vitto
+        room_cost: Alloggio
+        ticket_cost: Ticket
+        generic_cost: Spese Varie
+        total_amount: Totale Complessivo
+        operator: Operatore
+        mission_reason: Motivo Missione
+        mission_path: Percorso Missione
+        mission_place: Luogo Missione
+        mission_structure: Struttura Missione
+        transport: Trasporto
+        veichle: Veicolo
+        operator_fr: Operatore 
+        reason_fr: Motivo Missione
+        path_fr: Percorso Missione
+        place_fr: Luogo Missione
+        structure_fr: Struttura Missione
+        transport_fr: Trasporto
+        veichle_fr: Veicolo
+        highway_cost_fr: Costo Autostrada
+        path_lenght_fr: Lunghezza Percorso
     errors:
       messages:
         record_invalid: "Validazione fallita: %{errors}"

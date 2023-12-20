@@ -14,14 +14,14 @@
     </li>
     <li class="sidebar-item  nav-item mb-1">
       <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#reimbursments" aria-expanded="false" aria-controls="reimbursments">
-        <i class="fa-solid fa-receipt"></i>
+        <i class="fa-solid fa-wallet"></i>
         &nbsp;
         <span class="topic">RIMBORSI</span>
       </a>
       <ul id="reimbursments" class="sidebar-dropdown list-unstyled collapse bg-dark rounded border border-light" data-bs-parent="#sidebar">
         <li class="sidebar-item">
-          <%= link_to "#" do %>
-            <i class="fa-solid fa-receipt"></i>
+          <%= link_to reimbursements_path do %>
+            <i class="fa-solid fa-wallet"></i>
             &nbsp;
             Rimborsi
           <% end %>
@@ -43,7 +43,7 @@
         </li>
         <li class="sidebar-item">
           <%= link_to mission_paths_path do %>
-            <i class="fa-solid fa-map-location-dot"></i>
+            <i class="fa-solid fa-road"></i>
             &nbsp;
             Percorsi Missione
           <% end %>

@@ -1,15 +1,15 @@
 <%= link_to home_index_path, class: "navbar-brand" do %>
-  <%= image_tag("mission_paths/logos/mission_paths_navbar_logo.svg", class: "img-fluid") %>
+  <%= image_tag("reimbursements/logos/reimbursements_navbar_logo.svg", class: "img-fluid") %>
 <% end %>
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
     <li class="nav-item">
-      <%= link_to new_mission_path_path, "data-controller": "turbo", class: "btn btn-outline-success btn-sm" do %>
+      <%= link_to new_reimbursement_path, "data-controller": "turbo", class: "btn btn-outline-success btn-sm" do %>
         <i class="fa-solid fa-plus"></i>
         &nbsp;
-        <i class="fa-solid fa-road"></i>
+        <i class="fa-solid fa-wallet"></i>
         &nbsp;
-        Nuovo Percorso Missione
+        Nuovo Rimborso
       <% end %>
     </li>
   </ul>
