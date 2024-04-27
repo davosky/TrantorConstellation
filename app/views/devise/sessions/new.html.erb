@@ -1,0 +1,28 @@
+<%= image_tag("login/login-logo.svg", class: "img-flex mb-5") %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="input-group mb-3 shadow">
+    <span class="bg-primary text-white input-group-text">
+      <i class="fa-solid fa-user"></i>
+      &nbsp;
+      <%= f.label :username %>
+    </span>
+    <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control" %>
+  </div>
+  <div class="input-group mb-3 shadow">
+    <span class="bg-primary text-white input-group-text">
+      <i class="fa-solid fa-key"></i>
+      &nbsp;
+      <%= f.label :password %>
+    </span>
+    <%= f.password_field :password, autofocus: true, autocomplete: "password", class: "form-control" %>
+  </div>
+  <div class="d-grid mb-3">
+    <%= button_tag(type: "submit", class: "btn btn-primary shadow") do %>
+      <strong>
+        <i class="fas fa-sign-in-alt"></i>
+        &ensp;
+        <%= t "login" %>
+      </strong>
+    <% end %>
+  </div>
+<% end %>

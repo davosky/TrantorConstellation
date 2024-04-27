@@ -1,5 +1,8 @@
 ---
 it:
+  logout: Esci
+  login: Accedi
+  profile: Profilo
   activerecord:
     views:
       pagination:
@@ -8,7 +11,16 @@ it:
         next: Prossima
         previous: Precedente
     models:
+      user: Utente
     attributes:
+      user:
+        username: Nome Utente
+        password: Parola Chiave
+        password_confirmation: Conferma Parola Chiave
+        new_password: Nuova Parola Chiave
+        email: Posta Elettronica
+        first_name: Nome
+        last_name: Cognome
     errors:
       messages:
         record_invalid: "Validazione fallita: %{errors}"

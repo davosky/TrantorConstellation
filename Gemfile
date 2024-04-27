@@ -4,6 +4,8 @@ ruby "3.1.2"
 
 gem "bootsnap", require: false
 gem "cssbundling-rails"
+gem "devise"
+gem "devise-i18n"
 gem "image_processing"
 gem "jbuilder"
 gem "jsbundling-rails"
@@ -15,7 +17,7 @@ gem "redis"
 gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
-gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "wicked_pdf", ">= 1.1", "<= 1.4"
 gem "wkhtmltopdf-binary", "= 0.12.3.1"
 

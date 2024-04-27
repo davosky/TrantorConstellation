@@ -35,11 +35,25 @@
         <span class="d-none d-sm-inline mx-1">User</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li>
+          <%= link_to edit_user_registration_path, class: "dropdown-item", target: "new" do %>
+            <i class="fa-solid fa-user-tie"></i>
+            &nbsp;
+            <%= t "profile" %>
+          <% end %>
+        </li>
         <li>
           <hr class="dropdown-divider">
         </li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :get, class: "dropdown-item" do %>
+            <span class="text-danger">
+              <i class="fa-solid fa-door-open"></i>
+              &nbsp;
+              <%= t "logout" %>
+            </span>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
