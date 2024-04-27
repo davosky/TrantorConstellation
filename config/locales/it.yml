@@ -3,6 +3,7 @@ it:
   logout: Esci
   login: Accedi
   profile: Profilo
+  user: Utente
   activerecord:
     views:
       pagination:
