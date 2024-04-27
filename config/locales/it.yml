@@ -4,6 +4,13 @@ it:
   login: Accedi
   profile: Profilo
   user: Utente
+  home: Home
+  utility: Moduli
+  user_edit: Modifica Dati Utente
+  confirm_the_changes: Conferma le modifiche
+  root_path: Home
+  user_edit_path: Modifica dati Utente
+  generic_path: Pagina
   activerecord:
     views:
       pagination:
@@ -19,6 +26,7 @@ it:
         password: Parola Chiave
         password_confirmation: Conferma Parola Chiave
         new_password: Nuova Parola Chiave
+        current_password: Parola Chiave Corrente
         email: Posta Elettronica
         first_name: Nome
         last_name: Cognome

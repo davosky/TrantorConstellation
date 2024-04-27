@@ -6,34 +6,48 @@
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="input-group mb-3 shadow">
         <span class="bg-primary text-white input-group-text input-group-text-fixed-lenght">
-          <i class="fa-solid fa-at"></i>&nbsp;E-Mail
+          <i class="fa-solid fa-at"></i>
+          &nbsp;
+          <%= f.label :email %>
         </span>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
       </div>
       <div class="input-group mb-1 shadow">
         <span class="bg-primary text-white input-group-text input-group-text-fixed-lenght">
-          <i class="fa-solid fa-key"></i>&nbsp;Nuova Password
+          <i class="fa-solid fa-key"></i>
+          &nbsp;
+          <%= f.label :new_password %>
         </span>
         <%= f.password_field :password, autofocus: true, autocomplete: "password", class: "form-control" %>
       </div>
-      <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i>
+      <small>
+        <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i>
+      </small>
       <div class="input-group mb-3 mt-3 shadow">
         <span class="bg-primary text-white input-group-text input-group-text-fixed-lenght">
-          <i class="fa-solid fa-key"></i>&nbsp;Conferma Nuova Password
+          <i class="fa-solid fa-key"></i>
+          &nbsp;
+          <%= f.label :password_confirmation %>
         </span>
         <%= f.password_field :password_confirmation, autocomplete: "new password", class: "form-control" %>
       </div>
       <div class="input-group mb-1 shadow">
         <span class="bg-primary text-white input-group-text input-group-text-fixed-lenght">
-          <i class="fa-solid fa-key"></i>&nbsp;Password Attuale
+          <i class="fa-solid fa-key"></i>
+          &nbsp;
+          <%= f.label :current_password %>
         </span>
         <%= f.password_field :current_password, autocomplete: "current password", class: "form-control" %>
       </div>
-      <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i>
+      <small>
+        <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i>
+      </small>
       <div class="d-grid mt-3 mb-1">
-        <%= button_tag(type: "submit", class: "btn btn-outline-primary shadow") do %>
+        <%= button_tag(type: "submit", class: "btn btn-primary shadow") do %>
           <strong>
-            <i class="fas fa-sign-in-alt"></i>&ensp;CONFERMA MODIFICHE
+            <i class="fas fa-sign-in-alt"></i>
+            &ensp;
+            <%= t "confirm_the_changes" %>
           </strong>
         <% end %>
       </div>
