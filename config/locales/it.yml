@@ -1,16 +1,23 @@
 ---
 it:
+  # login-out
   logout: Esci
   login: Accedi
-  profile: Profilo
+  # user
   user: Utente
-  home: Home
-  utility: Moduli
   user_edit: Modifica Dati Utente
   confirm_the_changes: Conferma le modifiche
+  profile: Profilo
+  # navigation
   root_path: Home
+  home_credits_path: Crediti
   user_edit_path: Modifica dati Utente
   generic_path: Pagina
+  utility: Moduli
+  # home
+  home: Home
+  credits_description: Applicazione gestionale web per Rimborsi Spese ed Assenze
+  version: Versione
   activerecord:
     views:
       pagination:

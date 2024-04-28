@@ -1,2 +1,85 @@
-<h1>Home#credits</h1>
-<p>Find me in app/views/home/credits.html.erb</p>
+<div class="row align-items-center p-3 mt-5">
+  <div class="col-8 offset-2">
+    <div class="row align-items-center">
+      <div class="col p-justify">
+        <%= image_tag("main/main-logo.svg", class: "img-fluid") %>
+        <br/>
+        &emsp;
+        <h2 class="text-primary">
+          <strong>Trantor Constellation</strong>
+        </h2>
+        <h4 class="text-primary pb-5">
+          <%= t "credits_description" %>
+        </h4>
+        <h4 class="text-primary pb-3">
+          <%= t "version" %> 0.0.1
+        </h4>
+        <ol class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Language</div>
+              Ruby&emsp;<%= RUBY_VERSION %>
+            </div>
+            <span class="badge bg-primary rounded-pill">
+              <%= image_tag("main/ruby-icon.svg", class: "img-fluid") %>
+            </span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Framework</div>
+              RubyOnRails&emsp;<%= Rails.version %>
+            </div>
+            <span class="badge bg-primary rounded-pill">
+              <i class="fa-solid fa-code"></i>
+            </span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">RDB</div>
+              Mariadb&emsp;10.6
+            </div>
+            <span class="badge bg-primary rounded-pill">
+              <i class="fa-solid fa-database"></i>
+            </span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Javascript</div>
+              ESbuild&emsp;0.20
+            </div>
+            <span class="badge bg-primary rounded-pill">
+              <i class="fa-brands fa-js"></i>
+            </span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">FrontEnd</div>
+              Bootstrap&emsp;5.3
+            </div>
+            <span class="badge bg-primary rounded-pill">
+              <i class="fa-brands fa-bootstrap"></i>
+            </span>
+          </li>
+        </ol>
+      </div>
+      <div class="col text-center">
+        <%= image_tag("main/davosky-logo.svg", class: "img-fluid") %>
+        <br/>
+        &emsp;
+        <h3 class="text-primary">
+          The Davosky Connection <br/>
+        </h3>
+        <span class="text-primary">
+          by
+        </span>
+        <br/>
+        <h4 class="text-primary">
+          <a href="https://github.com/davosky" target="blank">
+            Davo Davodsky
+          </a>
+        </h4>
+        <br/>
+      </div>
+    </div>
+  </div>
+</div>

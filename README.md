@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Small Ruby On Rails web app to manage reimbusements and absences
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Language Ruby 3.1.2
+- Framework RubyOnRails 7.1.3.2
+- RDB Mariadb 10.6
+- Javascript ESbuild 0.20
+- FrontEnd Bootstrap 5.3
