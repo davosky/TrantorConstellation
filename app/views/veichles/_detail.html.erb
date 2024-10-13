@@ -1,0 +1,83 @@
+<%= turbo_frame_tag :remote_modal, target: :_top do %>
+  <div class="modal fade" data-controller="modal">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content border-2 border-primary rounded-3">
+        <div class="modal-header">
+          <div class="modal-title">
+            <%= image_tag("veichle/veichle-logo-show.svg", class: "img-fluid", alt: "veichle-logo-show.svg") %>
+          </div>
+          <a class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+        </div>
+        <div class="modal-body bg-white pt-5 pb-5">
+          <div class="col-8 offset-2">
+            <div id="<%= dom_id @veichle %>" class="scaffold_record">
+              <div class="row">
+                <div class="col">
+                  <span class="text-primary">
+                    <i class="fa-solid fa-car"></i>
+                    &emsp;
+                    Modello:
+                  </span>
+                  &emsp;
+                  <%= @veichle.name %>
+                  <hr class="text-primary"/>
+                  <span class="text-primary">
+                    <i class="fa-solid fa-industry"></i>
+                    &emsp;
+                    Produttore:
+                  </span>
+                  &emsp;
+                  <%= @veichle.producer %>
+                  <hr class="text-primary"/>
+                  <span class="text-primary">
+                    <i class="fa-solid fa-credit-card"></i>
+                    &emsp;
+                    Targa:
+                  </span>
+                  &emsp;
+                  <%= @veichle.license_plate %>
+                  <hr class="text-primary"/>
+                  <span class="text-primary">
+                    <i class="fa-solid fa-gas-pump"></i>
+                    &emsp;
+                    Tipo Carburante:
+                  </span>
+                  &emsp;
+                  <%= @veichle.fuel_type %>
+                  <hr class="text-primary"/>
+                  <span class="text-primary">
+                    <i class="fa-solid fa-money-bill"></i>
+                    &emsp;
+                    Costo al Km:
+                  </span>
+                  &emsp;
+                  <%= @veichle.cost_per_km %>
+                  <hr class="text-primary"/>
+                  <span class="text-primary">
+                    <i class="fa-solid fa-map-location"></i>
+                    &emsp;
+                    Fascia Territoriale:
+                  </span>
+                  &emsp;
+                  <%= @veichle.territory %>
+                  <hr class="text-primary"/>
+                  <span class="text-primary">
+                    <i class="fa-solid fa-arrow-up-9-1"></i>
+                    &emsp;
+                    Posizione in Scaletta:
+                  </span>
+                  &emsp;
+                  <%= @veichle.position %>
+                </div>
+              </div>
+            </div>
+            <hr class="text-primary"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

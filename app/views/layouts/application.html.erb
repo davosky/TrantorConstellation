@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TrantorConstellation</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+  <body>
+    <div class="container">
+      <% unless user_signed_in? %>
+        <%= render "shared/user_unlogged" %>
+      <% else %>
+        <%= render "shared/user_logged" %>
+      <% end %>
+      <%= turbo_frame_tag "remote_modal" %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<%= turbo_frame_tag :remote_modal, target: :_top do %>
+  <div class="modal fade" data-controller="modal">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content border-2 border-primary rounded-3">
+        <div class="modal-header">
+          <div class="modal-title">
+            <%= image_tag("road/road-logo-show.svg", class: "img-fluid", alt: "road-logo-show.svg") %>
+          </div>
+          <a class="btn btn-outline-primary" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+        </div>
+        <div class="modal-body bg-white pt-5 pb-5">
+          <div class="col-8 offset-2">
+            <div id="<%= dom_id @road %>" class="scaffold_record">
+              <div class="row">
+                <div class="col">
+                  <span class="text-primary">
+                    <i class="fa-solid fa-route"></i>
+                    &emsp;
+                    Perorso:
+                  </span>
+                  &emsp;
+                  <%= @road.name %>
+                  <hr class="text-primary"/>
+                  <span class="text-primary">
+                    <i class="fa-solid fa-ruler-horizontal"></i>
+                    &emsp;
+                    Lunghezza:
+                  </span>
+                  &emsp;
+                  <%= "#{@road.road_lenght} Km" %>
+                  <hr class="text-primary"/>
+                  <span class="text-primary">
+                    <i class="fa-solid fa-credit-card"></i>
+                    &emsp;
+                    Costo Pedaggio Autostradale
+                  </span>
+                  &emsp;
+                  <%= number_to_currency(@road.highway_cost) %>
+                  <hr class="text-primary"/>
+                  <span class="text-primary">
+                    <i class="fa-solid fa-arrow-up-9-1"></i>
+                    &emsp;
+                    Posizione in Scaletta:
+                  </span>
+                  &emsp;
+                  <%= @road.position %>
+                </div>
+              </div>
+            </div>
+            <hr class="text-primary"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,62 @@
+<div class="card bg-white shadow p-3">
+  <div class="card-header bg-white">
+    <%= image_tag("veichle/veichle-logo.svg", class: "img-fluid", alt: "veichle-logo.svg") %>
+    <span class="float-end">
+      <%= link_to new_veichle_path, "data-controller": "turbo", class: "btn btn-primary shadow mb-2" do %>
+        <i class="fa-solid fa-plus"></i>
+        &nbsp;
+        <i class="fa-solid fa-route"></i>
+        &nbsp;
+        Nuovo Veicolo
+      <% end %>
+    </span>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover table-borderless">
+      <thead>
+        <tr class="text-primary fs-5">
+          <th><i class="fa-solid fa-car"></i>&nbsp;Modello</th>
+          <th><i class="fa-solid fa-industry"></i>&nbsp;Produttore</th>
+          <th><i class="fa-solid fa-credit-card"></i>&nbsp;Targa</th>
+          <th><i class="fa-solid fa-money-bill"></i>&nbsp;Costo al Km</th>
+          <th><i class="fa-solid fa-gas-pump"></i>&nbsp;Tipo Carburante</th>
+          <th><i class="fa-solid fa-map-location"></i>&nbsp;Fascia Territoriale</th>
+          <th><i class="fa-solid fa-arrow-up-9-1"></i></th>
+          <th colspan=2></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @veichles.each do |veichle| %>
+          <tr>
+            <td>
+              <%= link_to veichle_path(veichle), "data-controller": "turbo" do %>
+                <%= veichle.name %>
+              <% end %>
+            </td>
+            <td><%= veichle.producer %></td>
+            <td><%= veichle.license_plate %></td>
+            <td><%= veichle.cost_per_km %></td>
+            <td><%= veichle.fuel_type %></td>
+            <td><%= veichle.territory %></td>
+            <td>
+              <%= link_to edit_veichle_path(veichle), "data-controller": "turbo", 
+            "data-bs-toggle": "tooltip", 
+            "title": "Modifica il Record Corrente", class: "edit-link" do %>
+                <i class="fa-solid fa-pen-to-square text-warning"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to veichle_path(veichle),
+            "data-turbo-method": :delete,
+            "data-turbo-confirm": "Sicuri di voler eliminare il record corrente?" , 
+            "data-bs-toggle": "tooltip", 
+            "title": "Elimina il Record Corrente", class: "delete-link" do%>
+                <i class="fa-solid fa-trash text-danger"></i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

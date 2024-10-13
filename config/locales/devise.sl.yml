@@ -1,0 +1,48 @@
+it:
+  errors:
+     messages:
+      expired: "je potekel, zahtevaj novega"
+      not_saved: 
+        one: "1 napaka je preprečila shranjevanje  %{resource}:"
+        other: "%{count} napake so preprečile shranjevanje %{resource}:"
+      not_found: "ni najdeno"
+      already_confirmed: "je že potrjeno, poskusi znova vzpostaviti povezavo"
+      not_locked: "ni bil blokiran"
+
+  devise:
+    failure:
+      already_authenticated: 'Si že potrjen'
+      unauthenticated: "Za nadaljevanje se moraš prijaviti ali registrirati."
+      unconfirmed: "Za nadaljevanje moraš potrditi svoj account."
+      locked: "Tvoj account je blokiran"
+      invalid: "Neveljaven e-poštni naslov ali geslo."
+      invalid_token: "Neveljavna koda za preverjanje pristnosti."
+      timeout: "Seja je potekla, za nadaljevanje se znova prijavi."
+      inactive: "Tvoj račun še ni bil aktiviran."
+    sessions:
+      signed_in: "Uspešno prijavljen."
+      signed_out: "Uspešno si zapustil."
+    passwords:
+      send_instructions: "V nekaj minutah boš prejel e-poštno sporočilo z navodili za ponastavitev gesla."
+      updated: "Tvoje geslo je bilo spremenjeno. Zdaj si povezan."
+    confirmations:
+      send_instructions: "V nekaj minutah boš prejel e-poštno sporočilo z navodili za potrditev accounta."
+      confirmed: "Tvoj account je bil uspešno potrjen. Zdaj si povezan."
+    registrations:
+      signed_up: "Uspešno registriran."
+      inactive_signed_up: 'Registriral si se, vendar nisi prijavljen, ker tvoj account  %{reason}.'
+      updated: "Tvoj account je posodobljen."
+      destroyed: "Dokler se spet ne srečava! Račun je bil preklican. Upamo, da se kmalu vidimo."
+    unlocks:
+      send_instructions: "V nekaj minutah boš prejel e-poštno sporočilo z navodili za odklepanje accounta."
+      unlocked: "Tvoj account je bil uspešno odklenjen. Zdaj si povezan."
+    omniauth_callbacks:
+      success: "Pooblaščeni si z accountom %{kind}."
+      failure: 'Nismo te mogli pooblastiti iz %{kind} ker "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: "Navodila za potrditev"
+      reset_password_instructions:
+        subject: "Navodila za ponastavitev gesla"
+      unlock_instructions:
+        subject: "Navodila za odklepanje računa"

@@ -1,0 +1,53 @@
+<div class="card bg-white shadow p-3">
+  <div class="card-header bg-white">
+    <%= image_tag("place/place-logo.svg", class: "img-fluid", alt: "place-logo.svg") %>
+    <span class="float-end">
+      <%= link_to new_place_path, "data-controller": "turbo", class: "btn btn-primary shadow mb-2" do %>
+        <i class="fa-solid fa-plus"></i>
+        &nbsp;
+        <i class="fa-solid fa-route"></i>
+        &nbsp;
+        Nuovo Luogo
+      <% end %>
+    </span>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover table-borderless">
+      <thead>
+        <tr class="text-primary fs-5">
+          <th><i class="fa-solid fa-city"></i>&nbsp;Luogo</th>
+          <th><i class="fa-solid fa-arrow-up-9-1"></i></th>
+          <th colspan=2></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @places.each do |place| %>
+          <tr>
+            <td>
+              <%= link_to place_path(place), "data-controller": "turbo" do %>
+                <%= place.name %>
+              <% end %>
+            </td>
+            <td><%= place.position %></td>
+            <td>
+              <%= link_to edit_place_path(place), "data-controller": "turbo", 
+            "data-bs-toggle": "tooltip", 
+            "title": "Modifica il Record Corrente", class: "edit-link" do %>
+                <i class="fa-solid fa-pen-to-square text-warning"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to place_path(place),
+            "data-turbo-method": :delete,
+            "data-turbo-confirm": "Sicuri di voler eliminare il record corrente?" , 
+            "data-bs-toggle": "tooltip", 
+            "title": "Elimina il Record Corrente", class: "delete-link" do%>
+                <i class="fa-solid fa-trash text-danger"></i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

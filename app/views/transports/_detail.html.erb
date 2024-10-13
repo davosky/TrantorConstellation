@@ -1,0 +1,43 @@
+<%= turbo_frame_tag :remote_modal, target: :_top do %>
+  <div class="modal fade" data-controller="modal">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content border-2 border-primary rounded-3">
+        <div class="modal-header">
+          <div class="modal-title">
+            <%= image_tag("transport/transport-logo-show.svg", class: "img-fluid", alt: "transport-logo-show.svg") %>
+          </div>
+          <a class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+        </div>
+        <div class="modal-body bg-white pt-5 pb-5">
+          <div class="col-8 offset-2">
+            <div id="<%= dom_id @transport %>" class="scaffold_record">
+              <div class="row">
+                <div class="col">
+                  <span class="text-primary">
+                    <i class="fa-solid fa-train"></i>
+                    &emsp;
+                    Trasporto:
+                  </span>
+                  &emsp;
+                  <%= @transport.name %>
+                  <hr class="text-primary"/>
+                  <span class="text-primary">
+                    <i class="fa-solid fa-arrow-up-9-1"></i>
+                    &emsp;
+                    Posizione in Scaletta:
+                  </span>
+                  &emsp;
+                  <%= @transport.position %>
+                </div>
+              </div>
+            </div>
+            <hr class="text-primary"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

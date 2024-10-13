@@ -1,0 +1,25 @@
+<%= turbo_frame_tag :remote_modal, target: :_top do %>
+  <div class="modal fade" data-controller="modal">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content border-2 border-primary rounded-3">
+        <div class="modal-header">
+          <div class="modal-title">
+            <% if current_page?(controller: :roads, action: :new) %>
+              <%= image_tag("road/road-logo-new.svg", class: "img-fluid", alt: "road-logo-new.svg")%>
+            <% else %>
+              <%= image_tag("road/road-logo-edit.svg", class: "img-fluid", alt: "road-logo-edit.svg")%>
+            <% end %>
+          </div>
+          <a class="btn btn-outline-primary" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+        </div>
+        <div class="modal-body bg-white pt-5 pb-5">
+          <div class="col-8 offset-2">
+            <%= render "roads/form", road: road %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

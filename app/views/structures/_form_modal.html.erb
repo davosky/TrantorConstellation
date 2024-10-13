@@ -1,0 +1,25 @@
+<%= turbo_frame_tag :remote_modal, target: :_top do %>
+  <div class="modal fade" data-controller="modal">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content border-2 border-primary rounded-3">
+        <div class="modal-header">
+          <div class="modal-title">
+            <% if current_page?(controller: :structures, action: :new) %>
+              <%= image_tag("structure/structure-logo-new.svg", class: "img-fluid", alt: "structure-logo-new.svg")%>
+            <% else %>
+              <%= image_tag("structure/structure-logo-edit.svg", class: "img-fluid", alt: "structure-logo-edit.svg")%>
+            <% end %>
+          </div>
+          <a class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+        </div>
+        <div class="modal-body bg-white pt-5 pb-5">
+          <div class="col-8 offset-2">
+            <%= render "structures/form", structure: structure %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
