@@ -1,4 +1,4 @@
-module RefundsHelper
+module ReimbursementsHelper
   def used_veichle(refund)
     if refund.veichle_id != nil
       ("Ho usato il seguente veicolo: <strong>#{refund.veichle_fr}</strong>.").html_safe

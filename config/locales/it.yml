@@ -15,6 +15,7 @@ it:
       structure: Struttura
       transport: Trasporto
       veichle: Veicolo
+      reimbursement: Rimborso Spese
     simple_calendar:
       previous: "<<"
       next: ">>"
@@ -58,6 +59,7 @@ it:
         structures: Strutture
         transports: Trasporti
         veichles: Veicoli
+        reimbursements: Rimborsi Spese
       road:
         name: Percorso
         road_lenght: Lunghezza Percorso
@@ -89,6 +91,34 @@ it:
         territory: Fascia territoriale
         position: Posizione
         user: Utente
+      reimbursement:
+        name: Numero Rimborso
+        departure_date: Data Partenza
+        return_date: Data Ritorno
+        request_date: Data Richiesta
+        reimbursement_date: Data Rimborso
+        parking_cost: Parcheggio
+        food_cost: Vitto
+        room_cost: Alloggio
+        ticket_cost: Ticket
+        generic_cost: Varie
+        total_amount: Totale
+        place: Luogo
+        place_fr: Luogo (ins lib)
+        reason: Motivo
+        reason_fr: Motivo (ins lib)
+        road: Percorso
+        road_fr: Percorso (ins lib)
+        structure: Struttura
+        structure_fr: Struttura (ins lib)
+        transport: Trasporto
+        transport_fr: Trasporto (ins lib)
+        user: Utente
+        user_fr: Utente (ins lib)
+        veichle: Veicolo
+        veichle_fr: Veicolo (ins lib)
+        highway_cost_fr: Autostrada
+        road_lenght_fr: Lunghezza
     errors:
       messages:
         record_invalid: "Validazione fallita: %{errors}"

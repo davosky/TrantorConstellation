@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 7) do
+ActiveRecord::Schema[7.0].define(version: 8) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,43 @@ ActiveRecord::Schema[7.0].define(version: 7) do
     t.integer "position"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_reasons_on_user_id"
+  end
+
+  create_table "reimbursements", force: :cascade do |t|
+    t.integer "name"
+    t.date "departure_date"
+    t.date "return_date"
+    t.date "request_date"
+    t.date "reimbursement_date"
+    t.decimal "parking_cost", precision: 8, scale: 2, default: "0.0"
+    t.decimal "food_cost", precision: 8, scale: 2, default: "0.0"
+    t.decimal "room_cost", precision: 8, scale: 2, default: "0.0"
+    t.decimal "ticket_cost", precision: 8, scale: 2, default: "0.0"
+    t.decimal "generic_cost", precision: 8, scale: 2, default: "0.0"
+    t.decimal "total_amount", precision: 8, scale: 2, default: "0.0"
+    t.bigint "place_id"
+    t.bigint "reason_id"
+    t.bigint "road_id"
+    t.bigint "structure_id"
+    t.bigint "transport_id"
+    t.bigint "user_id"
+    t.bigint "veichle_id"
+    t.string "place_fr"
+    t.string "reason_fr"
+    t.string "road_fr"
+    t.string "structure_fr"
+    t.string "transport_fr"
+    t.string "user_fr"
+    t.string "veichle_fr"
+    t.decimal "highway_cost_fr", precision: 8, scale: 2, default: "0.0"
+    t.decimal "road_lenght_fr", precision: 8, scale: 2, default: "0.0"
+    t.index ["place_id"], name: "index_reimbursements_on_place_id"
+    t.index ["reason_id"], name: "index_reimbursements_on_reason_id"
+    t.index ["road_id"], name: "index_reimbursements_on_road_id"
+    t.index ["structure_id"], name: "index_reimbursements_on_structure_id"
+    t.index ["transport_id"], name: "index_reimbursements_on_transport_id"
+    t.index ["user_id"], name: "index_reimbursements_on_user_id"
+    t.index ["veichle_id"], name: "index_reimbursements_on_veichle_id"
   end
 
   create_table "roads", force: :cascade do |t|

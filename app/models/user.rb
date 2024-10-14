@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :structures
   has_many :transports
   has_many :veichles
+  has_many :reimbursements
 
   before_create :set_id
 
