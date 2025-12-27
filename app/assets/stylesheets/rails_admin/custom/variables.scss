@@ -1,0 +1,112 @@
+// Lumen 5.3.8
+// Bootswatch
+
+$theme: "lumen" !default;
+
+//
+// Color system
+//
+
+$white: #fffcfc !default;
+$gray-100: #fff6f0 !default;
+$gray-200: #ffe8d6 !default;
+$gray-300: #e5d1c2 !default;
+$gray-400: #ccb9ac !default;
+$gray-500: #b2a89a !default;
+$gray-600: #998b80 !default;
+$gray-700: #80746b !default;
+$gray-800: #665d56 !default;
+$gray-900: #4d4640 !default;
+$black: #1a1715 !default;
+
+$blue: #008996 !default;
+$indigo: #457b9dff !default;
+$purple: #3d405b !default;
+$pink: #f5cac3 !default;
+$red: #f28482 !default;
+$orange: #feb97a !default;
+$yellow: #f6bd60 !default;
+$green: #6eccb4 !default;
+$teal: #a8dad3 !default;
+$cyan: #a7d7dc !default;
+
+$primary: $blue !default;
+$secondary: $gray-200 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-700 !default;
+
+$min-contrast-ratio: 1.75 !default;
+
+// Prefix for :root CSS variables
+
+$variable-prefix: bs- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix: $variable-prefix !default;
+
+/// Fonts
+
+@font-face {
+  font-family: "SofiaSansCondensed-Regular";
+  font-style: normal;
+  font-weight: 500;
+  src: url("SofiaSansCondensed-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SofiaSansCondensed-Italic";
+  font-style: normal;
+  font-weight: 500;
+  src: url("SofiaSansCondensed-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SofiaSansCondensed-Light";
+  src: url("SofiaSansCondensed-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SofiaSansCondensed-LightItalic";
+  src: url("SofiaSansCondensed-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SofiaSansCondensed-Bold";
+  src: url("SofiaSansCondensed-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SofiaSansCondensed-BoldItalic";
+  src: url("SofiaSansCondensed-BoldItalic.ttf") format("truetype");
+}
+
+* {
+  font-family: "SofiaSansCondensed-Regular";
+  src: url("SofiaSansCondensed-Regular.ttf") format("truetype");
+  font-size: 1.11rem;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.navbar-brand::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 115px;
+  height: 33px;
+  margin-right: 8px;
+  background-image: image-url("rails-admin-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+// Forms
+
+.form-control {
+  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.075);
+  font-size: 1.11rem;
+}

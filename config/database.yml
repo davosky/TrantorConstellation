@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV["TRANTOR_CONSTELLATION_DATABASE_HOST"] %>
+  username: <%= ENV["TRANTOR_CONSTELLATION_DATABASE_USERNAME"] %>
+  password: <%= ENV["TRANTOR_CONSTELLATION_DATABASE_PASSWORD"] %>
+  max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: trantor_constellation_development
+
+test:
+  <<: *default
+  database: trantor_constellation_test
+
+production:
+  <<: *default
+  database: trantor_constellation_production
+  username: trantor_constellation
+  password: <%= ENV["TRANTOR_CONSTELLATION_DATABASE_PASSWORD"] %>

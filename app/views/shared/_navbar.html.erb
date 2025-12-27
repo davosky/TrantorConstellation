@@ -1,0 +1,117 @@
+<div class="row">
+  <div class="col">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <%= link_to "#", class: "navbar-brand" do %>
+          <%= image_tag("navbar/navbar-logo.svg", class: "img-fluid", size: "114x32", alt: "main-logo-light") %>
+        <% end %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <%= link_to home_index_path, class: "nav-link" do %>
+                <i class="fa-solid fa-home"></i>&nbsp;Home
+              <% end %>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-file-pen"></i>&nbsp;RichiesteMissione
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "#", class: "dropdown-item" do %>
+                  <i class="fa-solid fa-file-pen"></i><i class="fa-solid fa-list"></i>
+                  &nbsp;
+                  Elenco Richieste Missione
+                <% end %>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-wallet"></i>&nbsp;Rimborsi
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "#", class: "dropdown-item" do %>
+                  <i class="fa-solid fa-wallet"></i><i class="fa-solid fa-list"></i>
+                  &nbsp;
+                  Elenco Rimborsi
+                <% end %>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown utility-icon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span>
+                  <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;Utilit&agrave;
+                </span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "#", method: :get, class: "dropdown-item" do %>
+                  <i class="fa-solid fa-train"></i>
+                  &nbsp;
+                  Trasporti
+                <% end %>
+                <%= link_to "#", method: :get, class: "dropdown-item" do %>
+                  <i class="fa-solid fa-car"></i>
+                  &nbsp;
+                  Veicoli
+                <% end %>
+                <%= link_to "#", method: :get, class: "dropdown-item" do %>
+                  <i class="fa-solid fa-city"></i>
+                  &nbsp;
+                  Luoghi
+                <% end %>
+                <%= link_to "#", method: :get, class: "dropdown-item" do %>
+                  <i class="fa-solid fa-building"></i>
+                  &nbsp;
+                  Strutture
+                <% end %>
+                <%= link_to "#", method: :get, class: "dropdown-item" do %>
+                  <i class="fa-solid fa-road"></i>
+                  &nbsp;
+                  Percorsi
+                <% end %>
+                <%= link_to "#", method: :get, class: "dropdown-item" do %>
+                  <i class="fa-solid fa-file-pen"></i>
+                  &nbsp;
+                  Motivi Missione
+                <% end %>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <%= link_to edit_user_registration_path, class: "nav-link" do %>
+                <i class="fa-solid fa-user"></i>&nbsp;<%= "#{current_user.name}".html_safe %>
+              <% end %>
+            </li>
+            <li class="nav-item dropstart">
+              <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <% if current_user.admin == true %>
+                  <%= link_to rails_admin_path, class: "dropdown-item" do %>
+                    <i class="fa-solid fa-wrench"></i>
+                    &nbsp;
+                    Amministrazione
+                  <% end %>
+                <% end %>
+                <%= link_to home_credits_path, method: :get, class: "dropdown-item" do %>
+                  <i class="fa-solid fa-user-gear"></i>
+                  &nbsp;
+                  Crediti
+                <% end %>
+                <%= link_to destroy_user_session_path, method: :get, class: "dropdown-item" do %>
+                  <i class="fa-solid fa-door-open text-danger"></i>
+                  &nbsp;
+                  Esci
+                <% end %>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
