@@ -1,0 +1,15 @@
+<div class="row mt-3">
+  <div class="col-8 offset-2 p-3 bg-white border-secondary shadow rounded">
+    <div class="card border border-0">
+      <div class="card-header bg-white border-0">
+        <span class="float-start fs-4 text-success fw-bold">
+          <%= image_tag("places/places-place-new-logo.svg", class: "img-fluid", size: "56x56", alt: "stats-logo") %>
+          &nbsp;
+          Inserisci un Nuovo Luogo
+        </span>
+      </div>
+      <hr class="text-success pb-2"/>
+      <%= render "form", place: @place %>
+    </div>
+  </div>
+</div>

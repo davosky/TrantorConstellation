@@ -1,0 +1,630 @@
+// Lumen 5.3.8
+// Bootswatch
+
+// Variables
+
+* {
+  font-family: "SofiaSansCondensed-Regular";
+  src: url("SofiaSansCondensed-Regular.ttf") format("truetype");
+  font-size: 1.11rem;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+// DOM
+
+body {
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23b2a89a' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+// Mixins
+
+@mixin shadow($width: 4px) {
+  border-style: solid;
+  border-width: 0 1px $width 1px;
+}
+
+// Navbar
+
+.navbar {
+  @include shadow();
+
+  @each $color, $value in $theme-colors {
+    &.bg-#{$color} {
+      border-color: shade-color($value, 10%);
+    }
+  }
+
+  &.bg-body-secondary,
+  &.bg-body-tertiary {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-item {
+    .nav-link {
+      color: $white;
+
+      &:hover {
+        color: $warning;
+      }
+    }
+  }
+  .dropdown-menu {
+    box-shadow: 0.3rem 0.2rem 0.3rem lighten($dark, 10);
+    border-color: $gray-600;
+  }
+  .dropdown-item {
+    color: $white;
+
+    &:hover {
+      background-color: $gray-600;
+    }
+  }
+}
+
+// Buttons
+
+.btn {
+  @include shadow();
+  text-transform: uppercase;
+
+  &:not(.disabled):hover {
+    margin-top: 1px;
+    border-bottom-width: 3px;
+  }
+
+  &:not(.disabled):active {
+    margin-top: 2px;
+    border-bottom-width: 2px;
+    @include box-shadow(none);
+  }
+
+  @each $color, $value in $theme-colors {
+    &-#{$color} {
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $value;
+      }
+
+      &,
+      &:not(.disabled):hover,
+      &:not(.disabled):active,
+      &:focus {
+        border-color: shade-color($value, 10%);
+      }
+    }
+  }
+}
+
+.btn-outline-secondary {
+  color: var(--bs-tertiary-color);
+}
+
+[class*="btn-outline"] {
+  border-top-width: 1px;
+}
+
+.btn-group-vertical {
+  .btn + .btn {
+    &:hover {
+      margin-top: -1px;
+      border-top-width: 1px;
+    }
+
+    &:active {
+      margin-top: -1px;
+      border-top-width: 2px;
+    }
+  }
+}
+
+// Typography
+
+.text-secondary {
+  color: $gray-700 !important;
+}
+
+.blockquote-footer {
+  color: $gray-600;
+}
+
+// Tables
+
+.table-secondary,
+.table-light {
+  --#{$prefix}table-color: #{$body-color};
+}
+
+.divTable {
+  display: table;
+
+  &.utility-table {
+    background-color: #ffffff;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+
+    .divTableCell,
+    .divTableHead {
+      padding: 3px 3px;
+    }
+
+    .divTableHeading {
+      border-bottom: 2px solid #158cba;
+
+      .divTableHead {
+        font-weight: bold;
+
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+  }
+}
+
+.utility-table {
+  .tableFootStyle {
+    font-size: 14px;
+
+    .links {
+      text-align: right;
+
+      a {
+        display: inline-block;
+        background: #1c6ea4;
+        color: #ffffff;
+        padding: 2px 8px;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  &.outerTableFooter {
+    border-top: none;
+
+    .tableFootStyle {
+      padding: 3px 5px;
+    }
+  }
+}
+
+.divTableBody {
+  .divTableRow {
+    &:hover {
+      background-color: $gray-100;
+    }
+  }
+}
+
+.divTableRow {
+  display: table-row;
+}
+
+.divTableHeading {
+  display: table-header-group;
+}
+
+.divTableCell,
+.divTableHead {
+  display: table-cell;
+}
+
+.divTableFoot {
+  display: table-footer-group;
+}
+
+.divTableBody {
+  display: table-row-group;
+}
+
+// Forms
+
+.form-control {
+  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.075);
+}
+
+.input-group-text-fixed {
+  min-width: 12rem;
+}
+
+// Navs
+
+.nav {
+  .open > a,
+  .open > a:hover,
+  .open > a:focus {
+    border-color: transparent;
+  }
+}
+
+.nav-tabs {
+  .nav-link {
+    color: var(--#{$prefix}body-color);
+
+    &,
+    &.disabled,
+    &.disabled:hover,
+    &.disabled:focus {
+      margin-top: 6px;
+      border-color: $nav-tabs-border-color;
+      transition: padding-bottom 0.2s ease-in-out, margin-top 0.2s ease-in-out,
+        border-bottom 0.2s ease-in-out;
+    }
+
+    &:not(.disabled):hover,
+    &:not(.disabled):focus,
+    &.active {
+      padding-bottom: add(0.5rem, 6px);
+      margin-top: 0;
+      color: var(--#{$prefix}body-color);
+      border-bottom-color: transparent;
+    }
+  }
+
+  &.nav-justified > li {
+    vertical-align: bottom;
+  }
+}
+
+.dropdown-menu {
+  margin-top: 0;
+  @include shadow();
+  border-top-width: 1px;
+  @include box-shadow(none);
+}
+
+.breadcrumb {
+  border-color: $pagination-border-color;
+  @include shadow();
+}
+
+.pagination {
+  > li > a,
+  > li > span {
+    position: relative;
+    top: 0;
+    font-weight: 700;
+    color: $pagination-color;
+    text-transform: uppercase;
+    @include shadow();
+
+    &:hover,
+    &:focus {
+      top: 1px;
+      text-decoration: none;
+      border-bottom-width: 3px;
+    }
+
+    &:active {
+      top: 2px;
+      border-bottom-width: 2px;
+    }
+  }
+
+  > .disabled > a,
+  > .disabled > span {
+    &:hover {
+      top: 0;
+      @include shadow();
+    }
+
+    &:active {
+      top: 0;
+      @include shadow();
+    }
+  }
+}
+
+.pager {
+  > li > a,
+  > li > span,
+  > .disabled > a,
+  > .disabled > span {
+    &,
+    &:hover,
+    &:active {
+      border-right-width: 2px;
+      border-left-width: 2px;
+    }
+  }
+}
+
+// Indicators
+
+.btn-close {
+  text-decoration: none;
+  opacity: 0.4;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.alert {
+  color: $white;
+  @include shadow();
+
+  &-primary {
+    background-color: $primary;
+    border-color: shade-color($primary, 10%);
+  }
+
+  &-secondary {
+    background-color: $secondary;
+    border-color: shade-color($secondary, 10%);
+  }
+
+  &-success {
+    background-color: $success;
+    border-color: shade-color($success, 10%);
+  }
+
+  &-info {
+    background-color: $info;
+    border-color: shade-color($info, 10%);
+  }
+
+  &-danger {
+    background-color: $danger;
+    border-color: shade-color($danger, 10%);
+  }
+
+  &-warning {
+    background-color: $warning;
+    border-color: shade-color($warning, 10%);
+  }
+
+  &-dark {
+    background-color: $dark;
+    border-color: shade-color($dark, 10%);
+  }
+
+  &-light {
+    background-color: $light;
+    border-color: shade-color($light, 10%);
+  }
+
+  .alert-link {
+    font-weight: 400;
+    color: $white;
+    text-decoration: underline;
+  }
+
+  &-secondary,
+  &-light {
+    &,
+    a,
+    .alert-link {
+      color: $body-color;
+    }
+  }
+}
+
+// Flash Messages - Auto-dismiss with animations
+// Added after existing alert styles
+
+.flash-messages {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: $zindex-modal + 1;
+  max-width: 400px;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    max-width: 500px;
+  }
+}
+
+.alert {
+  // Enhanced styles for flash messages
+  box-shadow: $box-shadow-lg;
+  margin-bottom: 0.75rem;
+  animation: slideInRight 0.3s ease-out;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+
+  // Apply your existing shadow mixin
+  @include shadow();
+
+  &:hover {
+    transform: translateX(-5px);
+  }
+
+  .btn-close {
+    padding: $alert-padding-y $alert-padding-x;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// Custom animation for slide in
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Fade out animation class (applied via JavaScript)
+.alert-fade-out {
+  animation: fadeOut 0.5s ease-in-out forwards !important;
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+}
+
+// Toast-like appearance for flash messages
+.alert-toast {
+  border-radius: $border-radius-lg;
+  padding: map-get($spacers, 3) map-get($spacers, 4);
+  font-size: $font-size-sm;
+
+  .btn-close {
+    font-size: $font-size-base;
+    padding: map-get($spacers, 2);
+  }
+}
+
+// Custom color variations using Bootstrap's theme colors
+.alert-custom-success {
+  @include alert-variant(
+    shift-color($success, $alert-bg-scale),
+    shift-color($success, $alert-border-scale),
+    shift-color($success, $alert-color-scale)
+  );
+  border-left: 4px solid $success;
+}
+
+.alert-custom-danger {
+  @include alert-variant(
+    shift-color($danger, $alert-bg-scale),
+    shift-color($danger, $alert-border-scale),
+    shift-color($danger, $alert-color-scale)
+  );
+  border-left: 4px solid $danger;
+}
+
+.alert-custom-warning {
+  @include alert-variant(
+    shift-color($warning, $alert-bg-scale),
+    shift-color($warning, $alert-border-scale),
+    shift-color($warning, $alert-color-scale)
+  );
+  border-left: 4px solid $warning;
+}
+
+.alert-custom-info {
+  @include alert-variant(
+    shift-color($info, $alert-bg-scale),
+    shift-color($info, $alert-border-scale),
+    shift-color($info, $alert-color-scale)
+  );
+  border-left: 4px solid $info;
+}
+
+// Progress bar for countdown (optional)
+.alert-with-progress {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0.5rem; // Extra space for progress bar
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: rgba($white, 0.3);
+    width: 100%;
+    animation: progressBar 3s linear forwards;
+  }
+
+  // Light alerts need darker progress bar
+  &.alert-light,
+  &.alert-secondary {
+    &::after {
+      background-color: rgba($dark, 0.1);
+    }
+  }
+}
+
+@keyframes progressBar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+// Mobile adjustments for flash messages
+@include media-breakpoint-down(sm) {
+  .flash-messages {
+    left: 1rem;
+    right: 1rem;
+    max-width: none;
+  }
+
+  .alert {
+    margin-bottom: 0.5rem;
+    font-size: $font-size-base;
+  }
+}
+
+// End of flash messages styles
+
+.badge {
+  &.bg-secondary,
+  &.bg-light {
+    color: $dark;
+  }
+}
+
+// Containers
+
+a.list-group-item {
+  &-success {
+    &.active {
+      background-color: $success;
+    }
+
+    &.active:hover,
+    &.active:focus {
+      background-color: shade-color($success, 10%);
+    }
+  }
+
+  &-warning {
+    &.active {
+      background-color: $warning;
+    }
+
+    &.active:hover,
+    &.active:focus {
+      background-color: shade-color($warning, 10%);
+    }
+  }
+
+  &-danger {
+    &.active {
+      background-color: $danger;
+    }
+
+    &.active:hover,
+    &.active:focus {
+      background-color: shade-color($danger, 10%);
+    }
+  }
+}
+
+.modal,
+.toast,
+.offcanvas {
+  .btn-close {
+    background-image: escape-svg(
+      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$black}'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>")
+    );
+  }
+}

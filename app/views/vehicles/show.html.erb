@@ -1,0 +1,70 @@
+<div class="row mt-3">
+  <div class="col-8 offset-2 p-3 bg-white border-secondary shadow rounded">
+    <div class="card border-0">
+      <div class="card-header bg-white border-0">
+        <span class="float-start fs-4 text-primary fw-bold">
+          <%= image_tag("vehicles/vehicles-vehicle-info-logo.svg", class: "img-fluid", size: "56x56", alt: "stats-logo") %>
+          &nbsp;
+          Veicolo
+        </span>
+        &emsp;
+        <span class="float-end">
+          <small class="text-secondary">
+            codice identificativo:
+            &emsp;
+            <%= @vehicle.id %>
+          </small>
+        </span>
+      </div>
+      <hr class="text-primary pb-2"/>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item fs-5 fw-bold text-primary">
+            <i class="fa-solid fa-car fs-5 fw-bold"></i>
+            &nbsp;
+            Modello
+            <span class="fs-5 fw-bold text-dark float-end">
+              <%= @vehicle.name %>
+            </span>
+          </li>
+          <li class="list-group-item fs-5 fw-bold text-primary">
+            <i class="fa-solid fa-industry fs-5 fw-bold"></i>
+            &nbsp;
+            Produttore
+            <span class="fs-5 fw-bold text-dark float-end">
+              <%= @vehicle.producer %>
+            </span>
+          </li>
+          <li class="list-group-item fs-5 fw-bold text-primary">
+            <i class="fa-solid fa-credit-card fs-5 fw-bold"></i>
+            &nbsp;
+            Targa
+            <span class="fs-5 fw-bold text-dark float-end">
+              <%= @vehicle.licence_plate %>
+            </span>
+          </li>
+          <li class="list-group-item fs-5 fw-bold text-primary">
+            <i class="fa-solid fa-money-bill fs-5 fw-bold"></i>
+            &nbsp;
+            Costo per Km
+            <span class="fs-5 fw-bold text-dark float-end">
+              <%= number_to_currency(@vehicle.cost_per_km) %>
+            </span>
+          </li>
+          <li class="list-group-item fs-5 fw-bold text-primary">
+            <i class="fa-solid fa-arrow-up-9-1"></i>
+            &nbsp;
+            Posizione
+            <span class="fs-5 fw-bold text-dark float-end">
+              <%= @vehicle.position %>
+            </span>
+          </li>
+        </ul>
+        <hr class="text-primary"/>
+        <%= link_to vehicles_path, class: "btn btn-secondary" do %>
+          Chiudi
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="row mt-3">
+  <div class="col-8 offset-2 p-3 bg-white border-secondary shadow rounded">
+    <div class="bg-white bg-white">
+      <div class="pt-2 ps-3 pb-2">
+        <h4 class="text-primary fw-bolder">
+          <%= image_tag("structures/structures-structures-logo.svg", class: "img-fluid", size: "56x56", alt: "structures-structures-logo") %>
+          &emsp;
+          Strutture
+          <span class="float-end">
+            <%= link_to new_structure_path, data: { turbo: true, turbo_frame: 'modal' }, class: "btn btn-primary mt-3 me-3" do %>
+              <i class="fa-solid fa-plus"></i>
+              <i class="fa-solid fa-building"></i>
+              &emsp;
+              Inserisci una Nuova Struttura
+            <% end %>
+          </span>
+        </h4>
+      </div>
+      <hr class="text-primary pb-2"/>
+      <div class="bg-white p-2">
+        <div class="divTable utility-table">
+          <div class="divTableHeading">
+            <div class="divTableRow">
+              <div class="divTableHead ps-2 text-primary fw-bold">
+                <i class="fa-solid fa-building"></i>
+                &nbsp;
+                Struttura
+              </div>
+              <div class="divTableHead ps-2 text-primary fw-bold">
+                <i class="fa-solid fa-arrow-up-9-1"></i>
+                &nbsp;
+                Posizione
+              </div>
+              <div class="divTableHead ps-2 text-primary fw-bold"></div>
+              <div class="divTableHead ps-2 text-primary fw-bold"></div>
+            </div>
+          </div>
+          <div class="divTableBody">
+            <% @structures.each do |structure| %>
+              <div class="divTableRow">
+                <div class="divTableCell p-2"><%= structure.name %></div>
+                <div class="divTableCell p-2"><%= structure.position %></div>
+                <div class="divTableCell p-2">
+                  <%= link_to edit_structure_path(structure), data: { turbo: true, turbo_frame: 'modal' },
+                              "data-bs-toggle": "tooltip",
+                              "title": "Modifica il Record Corrente", class: "text-warning" do %>
+                    <i class="fa-solid fa-pencil"></i>
+                  <% end %>
+                </div>
+                <div class="divTableCell p-2">
+                  <%= link_to confirm_delete_structure_path(structure), class: "text-danger" do %>
+                    <i class="fa-solid fa-trash-can"></i>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

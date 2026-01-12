@@ -1,0 +1,36 @@
+<div class="row mt-3">
+  <div class="col-8 offset-2 p-3 bg-white border-secondary shadow rounded">
+    <div class="card border-0">
+      <div class="card-header bg-white border-0">
+        <span class="float-start fs-4 text-danger fw-bold">
+          <%= image_tag("places/places-place-delete-logo.svg", class: "img-fluid", size: "56x56", alt: "stats-logo") %>
+          &nbsp;
+          Elimina Luogo
+        </span>
+      </div>
+      <hr class="text-danger pb-2"/>
+      <div class="card-body border-0">
+        <strong class="text-danger">
+          Attenzione: sicuri di voler eliminare il luogo:
+          <br/>
+          <%= @place.name %>?
+          <br/>
+          Questa azione non può essere annullata.
+        </strong>
+        <hr class="text-danger"/>
+        <div class="row">
+          <div class="col">
+            <%= link_to place_path(@place),
+                              "data-turbo-method": :delete,
+                              "data-bs-toggle": "tooltip",
+                              "title": "Elimina il Record Corrente", class: "btn btn-danger" do %>
+              Elimina Definitivamente
+            <% end %>
+            &nbsp;
+            <%= link_to "Annulla", places_path, class: "btn btn-secondary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

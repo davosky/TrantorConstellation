@@ -1,0 +1,61 @@
+  <%= form_with(model: vehicle) do |form| %>
+  <div class="card-body bg-white border-0">
+    <% if vehicle.errors.any? %>
+      <div id="error_explanation" data-turbo-cache="false" class="alert alert-dismissible alert-danger">
+        <div style="color: red">
+          <h4 class="text-white">
+            <%= pluralize(vehicle.errors.count, "errori") %>
+            <br/>
+            hanno bloccato il salvataggio di questo veicolo:
+          </h4>
+          <ul>
+            <% vehicle.errors.each do |error| %>
+              <li>
+                <strong class="text-white">
+                  <%= error.full_message %>
+                </strong>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+    <div class="input-group mb-1">
+      <span class="input-group-text input-group-text-fixed bg-secondary">
+        <i class="fa-solid fa-car"></i>&nbsp;<%= form.label :name %>
+      </span>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="input-group mb-1">
+      <span class="input-group-text input-group-text-fixed bg-secondary">
+        <i class="fa-solid fa-industry"></i>&nbsp;<%= form.label :producer %>
+      </span>
+      <%= form.text_field :producer, class: 'form-control' %>
+    </div>
+    <div class="input-group mb-1">
+      <span class="input-group-text input-group-text-fixed bg-secondary">
+        <i class="fa-solid fa-credit-card"></i>&nbsp;<%= form.label :licence_plate %>
+      </span>
+      <%= form.text_field :licence_plate, class: 'form-control' %>
+    </div>
+    <div class="input-group mb-1">
+      <span class="input-group-text input-group-text-fixed bg-secondary">
+        <i class="fa-solid fa-credit-card"></i>&nbsp;<%= form.label :cost_per_km %>
+      </span>
+      <%= form.number_field :cost_per_km, step: 0.01, class: 'form-control' %>
+    </div>
+    <div class="input-group mb-1">
+      <span class="input-group-text input-group-text-fixed bg-secondary">
+        <i class="fa-solid fa-arrow-up-9-1"></i>&nbsp;<%= form.label :position %>
+      </span>
+      <%= form.number_field :position, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="card-footer bg-white border-0">
+    <%= form.submit class: submit_button %>
+    &nbsp;
+    <%= link_to vehicles_path, class: "btn btn-secondary" do %>
+      Chiudi
+    <% end %>
+  </div>
+<% end %>

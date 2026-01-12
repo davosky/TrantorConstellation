@@ -1,0 +1,15 @@
+<div class="row mt-3">
+  <div class="col-8 offset-2 p-3 bg-white border-secondary shadow rounded">
+    <div class="card border-0">
+      <div class="card-header bg-white border-0">
+        <span class="float-start fs-4 text-warning fw-bold">
+          <%= image_tag("roads/roads-road-edit-logo.svg", class: "img-fluid", size: "56x56", alt: "stats-logo") %>
+          &nbsp;
+          Modifica Percorso
+        </span>
+      </div>
+      <hr class="text-warning pb-2"/>
+      <%= render "form", road: @road %>
+    </div>
+  </div>
+</div>

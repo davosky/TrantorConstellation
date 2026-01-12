@@ -13,6 +13,42 @@ RailsAdmin.config do |config|
     label_plural "Utenti"
   end
 
+  config.model "Transport" do
+    visible true
+    label "Trasporto"
+    label_plural "Trasporti"
+  end
+
+  config.model "Vehicle" do
+    visible true
+    label "Veicolo"
+    label_plural "Veicoli"
+  end
+
+  config.model "Place" do
+    visible true
+    label "Luogo"
+    label_plural "Luoghi"
+  end
+
+  config.model "Structure" do
+    visible true
+    label "Struttura"
+    label_plural "Strutture"
+  end
+
+  config.model "Road" do
+    visible true
+    label "Percorso"
+    label_plural "Percorsi"
+  end
+
+  config.model "Reason" do
+    visible true
+    label "Motivo Missione"
+    label_plural "Motivi Missione"
+  end
+
   ### Popular gems integration
 
   ## == Devise ==

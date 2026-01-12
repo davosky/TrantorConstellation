@@ -139,6 +139,89 @@ body {
   --#{$prefix}table-color: #{$body-color};
 }
 
+.divTable {
+  display: table;
+
+  &.utility-table {
+    background-color: #ffffff;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+
+    .divTableCell,
+    .divTableHead {
+      padding: 3px 3px;
+    }
+
+    .divTableHeading {
+      border-bottom: 2px solid #158cba;
+
+      .divTableHead {
+        font-weight: bold;
+
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+  }
+}
+
+.utility-table {
+  .tableFootStyle {
+    font-size: 14px;
+
+    .links {
+      text-align: right;
+
+      a {
+        display: inline-block;
+        background: #1c6ea4;
+        color: #ffffff;
+        padding: 2px 8px;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  &.outerTableFooter {
+    border-top: none;
+
+    .tableFootStyle {
+      padding: 3px 5px;
+    }
+  }
+}
+
+.divTableBody {
+  .divTableRow {
+    &:hover {
+      background-color: $gray-100;
+    }
+  }
+}
+
+.divTableRow {
+  display: table-row;
+}
+
+.divTableHeading {
+  display: table-header-group;
+}
+
+.divTableCell,
+.divTableHead {
+  display: table-cell;
+}
+
+.divTableFoot {
+  display: table-footer-group;
+}
+
+.divTableBody {
+  display: table-row-group;
+}
+
 // Forms
 
 .form-control {
@@ -268,41 +351,49 @@ body {
   @include shadow();
 
   &-primary {
+    color: $white;
     background-color: $primary;
     border-color: shade-color($primary, 10%);
   }
 
   &-secondary {
+    color: $white;
     background-color: $secondary;
     border-color: shade-color($secondary, 10%);
   }
 
   &-success {
+    color: $white;
     background-color: $success;
     border-color: shade-color($success, 10%);
   }
 
   &-info {
+    color: $white;
     background-color: $info;
     border-color: shade-color($info, 10%);
   }
 
   &-danger {
+    color: $white;
     background-color: $danger;
     border-color: shade-color($danger, 10%);
   }
 
   &-warning {
+    color: $white;
     background-color: $warning;
     border-color: shade-color($warning, 10%);
   }
 
   &-dark {
+    color: $white;
     background-color: $dark;
     border-color: shade-color($dark, 10%);
   }
 
   &-light {
+    color: $white;
     background-color: $light;
     border-color: shade-color($light, 10%);
   }

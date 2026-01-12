@@ -10,9 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_12_27_162610) do
+ActiveRecord::Schema[7.2].define(version: 2026_01_12_150341) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "places", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_places_on_user_id"
+  end
+
+  create_table "reasons", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reasons_on_user_id"
+  end
+
+  create_table "roads", force: :cascade do |t|
+    t.string "name"
+    t.decimal "road_lenght", precision: 8, scale: 2, default: "0.0"
+    t.decimal "highway_cost", precision: 8, scale: 2, default: "0.0"
+    t.string "position"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_roads_on_user_id"
+  end
+
+  create_table "structures", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_structures_on_user_id"
+  end
+
+  create_table "transports", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_transports_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", default: "", null: false
@@ -42,4 +89,23 @@ ActiveRecord::Schema[7.2].define(version: 2025_12_27_162610) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string "name"
+    t.string "producer"
+    t.string "licence_plate"
+    t.decimal "cost_per_km", precision: 8, scale: 2, default: "0.0"
+    t.integer "position"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_vehicles_on_user_id"
+  end
+
+  add_foreign_key "places", "users"
+  add_foreign_key "reasons", "users"
+  add_foreign_key "roads", "users"
+  add_foreign_key "structures", "users"
+  add_foreign_key "transports", "users"
+  add_foreign_key "vehicles", "users"
 end

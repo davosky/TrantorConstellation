@@ -1,0 +1,81 @@
+<div class="row mt-3">
+  <div class="col-8 offset-2 p-3 bg-white border-secondary shadow rounded">
+    <div class="bg-white bg-white">
+      <div class="pt-2 ps-3 pb-2">
+        <h4 class="text-primary fw-bolder">
+          <%= image_tag("roads/roads-roads-logo.svg", class: "img-fluid", size: "56x56", alt: "roads-roads-logo") %>
+          &emsp;
+          Percorsi
+          <span class="float-end">
+            <%= link_to new_road_path, data: { turbo: true, turbo_frame: 'modal' }, class: "btn btn-primary mt-3 me-3" do %>
+              <i class="fa-solid fa-plus"></i>
+              <i class="fa-solid fa-road"></i>
+              &emsp;
+              Inserisci un Nuovo Percorso
+            <% end %>
+          </span>
+        </h4>
+      </div>
+      <hr class="text-primary pb-2"/>
+      <div class="bg-white p-2">
+        <div class="divTable utility-table">
+          <div class="divTableHeading">
+            <div class="divTableRow">
+              <div class="divTableHead ps-2 text-primary fw-bold">
+                <i class="fa-solid fa-road"></i>
+                &nbsp;
+                Percorso
+              </div>
+              <div class="divTableHead ps-2 text-primary fw-bold">
+                <i class="fa-solid fa-ruler"></i>
+                &nbsp;
+                Lunghezza Percorso
+              </div>
+              <div class="divTableHead ps-2 text-primary fw-bold">
+                <i class="fa-solid fa-money-bill"></i>
+                &nbsp;
+                Costo Autostrada
+              </div>
+              <div class="divTableHead ps-2 text-primary fw-bold">
+                <i class="fa-solid fa-arrow-up-9-1"></i>
+                &nbsp;
+                Posizione
+              </div>
+              <div class="divTableHead ps-2 text-primary fw-bold"></div>
+              <div class="divTableHead ps-2 text-primary fw-bold"></div>
+            </div>
+          </div>
+          <div class="divTableBody">
+            <% @roads.each do |road| %>
+              <div class="divTableRow">
+                <div class="divTableCell p-2">
+                  <%= link_to road, data: { turbo: true, turbo_frame: 'modal' }, title: "Visualizza il Record Corrente" do %>
+                    <i class="fa-solid fa-road"></i>
+                    &nbsp;
+                    <%= road.name %>
+                  <% end %>
+                </div>
+                <div class="divTableCell p-2"><%= road.road_lenght %>&nbsp;Km</div>
+                <div class="divTableCell p-2"><%= number_to_currency(road.highway_cost) %></div>
+                <div class="divTableCell p-2"><%= road.position %></div>
+                <div class="divTableCell p-2">
+                  <%= link_to edit_road_path(road), data: { turbo: true, turbo_frame: 'modal' },
+                              "data-bs-toggle": "tooltip",
+                              "title": "Modifica il Record Corrente", class: "text-warning" do %>
+                    <i class="fa-solid fa-pencil"></i>
+                  <% end %>
+                </div>
+                <div class="divTableCell p-2">
+                  <%= link_to confirm_delete_road_path(road), class: "text-danger" do %>
+                    <i class="fa-solid fa-trash-can"></i>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,87 @@
+<div class="row mt-3">
+  <div class="col-8 offset-2 p-3 bg-white border-secondary shadow rounded">
+    <div class="bg-white bg-white">
+      <div class="pt-2 ps-3 pb-2">
+        <h4 class="text-primary fw-bolder">
+          <%= image_tag("vehicles/vehicles-vehicles-logo.svg", class: "img-fluid", size: "56x56", alt: "vehicles-vehicles-logo") %>
+          &emsp;
+          Veicoli
+          <span class="float-end">
+            <%= link_to new_vehicle_path, data: { turbo: true, turbo_frame: 'modal' }, class: "btn btn-primary mt-3 me-3" do %>
+              <i class="fa-solid fa-plus"></i>
+              <i class="fa-solid fa-car"></i>
+              &emsp;
+              Inserisci un Nuovo Veicolo
+            <% end %>
+          </span>
+        </h4>
+      </div>
+      <hr class="text-primary pb-2"/>
+      <div class="bg-white p-2">
+        <div class="divTable utility-table">
+          <div class="divTableHeading">
+            <div class="divTableRow">
+              <div class="divTableHead ps-2 text-primary fw-bold">
+                <i class="fa-solid fa-car"></i>
+                &nbsp;
+                Modello
+              </div>
+              <div class="divTableHead ps-2 text-primary fw-bold">
+                <i class="fa-solid fa-industry"></i>
+                &nbsp;
+                Produttore
+              </div>
+              <div class="divTableHead ps-2 text-primary fw-bold">
+                <i class="fa-solid fa-credit-card"></i>
+                &nbsp;
+                Targa
+              </div>
+              <div class="divTableHead ps-2 text-primary fw-bold">
+                <i class="fa-solid fa-money-bill"></i>
+                &nbsp;
+                Costo per Km
+              </div>
+              <div class="divTableHead ps-2 text-primary fw-bold">
+                <i class="fa-solid fa-arrow-up-9-1"></i>
+                &nbsp;
+                Posizione
+              </div>
+              <div class="divTableHead ps-2 text-primary fw-bold"></div>
+              <div class="divTableHead ps-2 text-primary fw-bold"></div>
+            </div>
+          </div>
+          <div class="divTableBody">
+            <% @vehicles.each do |vehicle| %>
+              <div class="divTableRow">
+                <div class="divTableCell p-2">
+                  <%= link_to vehicle, data: { turbo: true, turbo_frame: 'modal' }, title: "Visualizza il Record Corrente" do %>
+                    <i class="fa-solid fa-car"></i>
+                    &nbsp;
+                    <%= vehicle.name %>
+                  <% end %>
+                </div>
+                <div class="divTableCell p-2"><%= vehicle.producer %></div>
+                <div class="divTableCell p-2"><%= vehicle.licence_plate %></div>
+                <div class="divTableCell p-2"><%= vehicle.cost_per_km %></div>
+                <div class="divTableCell p-2"><%= vehicle.position %></div>
+                <div class="divTableCell p-2">
+                  <%= link_to edit_vehicle_path(vehicle), data: { turbo: true, turbo_frame: 'modal' },
+                              "data-bs-toggle": "tooltip",
+                              "title": "Modifica il Record Corrente", class: "text-warning" do %>
+                    <i class="fa-solid fa-pencil"></i>
+                  <% end %>
+                </div>
+                <div class="divTableCell p-2">
+                  <%= link_to confirm_delete_vehicle_path(vehicle), class: "text-danger" do %>
+                    <i class="fa-solid fa-trash-can"></i>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -9,6 +9,12 @@ it:
         previous: Precedente
     models:
       user: Utente
+      transport: Trasporto
+      vehicle: Veicolo
+      place: Luogo
+      structure: Struttura
+      road: Percorso
+      reason: Motivo Missione
     simple_calendar:
       previous: "<<"
       next: ">>"
@@ -35,6 +41,59 @@ it:
         manager: Direttore
         payroll: Ufficio Paghe
         regular: Base
+        created_at: Creato Il
+        updated_at: Aggiornato il
+      transport:
+        id: codice progressivo
+        name: Trasporto
+        position: Posizione
+        user: Utente
+        user_id: Utente
+        created_at: Creato Il
+        updated_at: Aggiornato il
+      vehicle:
+        id: codice progressivo
+        name: Modello
+        producer: Produttore
+        licence_plate: Targa
+        cost_per_km: Costo al Km
+        position: Posizione
+        user: Utente
+        user_id: Utente
+        created_at: Creato Il
+        updated_at: Aggiornato il
+      place:
+        id: codice progressivo
+        name: Luogo
+        position: Posizione
+        user: Utente
+        user_id: Utente
+        created_at: Creato Il
+        updated_at: Aggiornato il
+      structure:
+        id: codice progressivo
+        name: Struttura
+        position: Posizione
+        user: Utente
+        user_id: Utente
+        created_at: Creato Il
+        updated_at: Aggiornato il
+      road:
+        id: codice progressivo
+        name: Percorso
+        road_lenght: Lunghezza Percorso
+        highway_cost: Costo Autostrada
+        position: Posizione
+        user: Utente
+        user_id: Utente
+        created_at: Creato Il
+        updated_at: Aggiornato il
+      reason:
+        id: codice progressivo
+        name: Motivo Missione
+        position: Posizione
+        user: Utente
+        user_id: Utente
         created_at: Creato Il
         updated_at: Aggiornato il
     errors:

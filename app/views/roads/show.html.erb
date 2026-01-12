@@ -1,0 +1,62 @@
+<div class="row mt-3">
+  <div class="col-8 offset-2 p-3 bg-white border-secondary shadow rounded">
+    <div class="card border-0">
+      <div class="card-header bg-white border-0">
+        <span class="float-start fs-4 text-info fw-bold">
+          <%= image_tag("roads/roads-road-info-logo.svg", class: "img-fluid", size: "56x56", alt: "stats-logo") %>
+          &nbsp;
+          Percorso
+        </span>
+        &emsp;
+        <span class="float-end">
+          <small class="text-secondary">
+            codice identificativo:
+            &emsp;
+            <%= @road.id %>
+          </small>
+        </span>
+      </div>
+      <hr class="text-info pb-2"/>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item fs-5 fw-bold text-primary">
+            <i class="fa-solid fa-road fs-5 fw-bold"></i>
+            &nbsp;
+            Percorso
+            <span class="fs-5 fw-bold text-dark float-end">
+              <%= @road.name %>
+            </span>
+          </li>
+          <li class="list-group-item fs-5 fw-bold text-primary">
+            <i class="fa-solid fa-ruler fs-5 fw-bold"></i>
+            &nbsp;
+            Lunghezza percorso
+            <span class="fs-5 fw-bold text-dark float-end">
+              <%= @road.road_lenght %>&nbsp;Km
+            </span>
+          </li>
+          <li class="list-group-item fs-5 fw-bold text-primary">
+            <i class="fa-solid fa-money-bill fs-5 fw-bold"></i>
+            &nbsp;
+            Costo Autostrada
+            <span class="fs-5 fw-bold text-dark float-end">
+              <%= number_to_currency(@road.highway_cost) %>
+            </span>
+          </li>
+          <li class="list-group-item fs-5 fw-bold text-primary">
+            <i class="fa-solid fa-arrow-up-9-1"></i>
+            &nbsp;
+            Posizione
+            <span class="fs-5 fw-bold text-dark float-end">
+              <%= @road.position %>
+            </span>
+          </li>
+        </ul>
+        <hr class="text-info"/>
+        <%= link_to roads_path, class: "btn btn-secondary" do %>
+          Chiudi
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

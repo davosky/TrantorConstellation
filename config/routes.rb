@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  # Reasons
+  resources :reasons do
+    get "confirm_delete", on: :member
+  end
+  # Roads
+  resources :roads do
+    get "confirm_delete", on: :member
+  end
+  # Structures
+  resources :structures do
+    get "confirm_delete", on: :member
+  end
+  # Places
+  resources :places do
+    get "confirm_delete", on: :member
+  end
+  # Vehicles
+  resources :vehicles do
+    get "confirm_delete", on: :member
+  end
+  # Transports
+  resources :transports do
+    get "confirm_delete", on: :member
+  end
   # RailsAdmin paths
   mount RailsAdmin::Engine => "/admin", as: "rails_admin"
   # Devise paths

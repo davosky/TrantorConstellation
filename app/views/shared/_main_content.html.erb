@@ -1,1 +1,34 @@
+<!-- Flash messages container with Bootstrap classes -->
+<div class="flash-messages mt-2 shadow" id="flash-messages">
+  <% flash.each do |type, message| %>
+    <% 
+        # Map flash types to Bootstrap alert classes
+        alert_type = case type.to_sym
+                     when :notice then 'success'
+                     when :alert, :error then 'danger'
+                     else type
+                     end
+      %>
+    <div class="alert alert-<%= alert_type %> alert-dismissible fade show alert-toast" 
+           role="alert" 
+           data-controller="flash" 
+           data-flash-auto-dismiss-value="true">
+      <div class="d-flex align-items-center">
+        <div class="flex-grow-1">
+          <h5>
+            <strong>
+              <%= message %>
+            </strong>
+          </h5>
+        </div>
+        <button type="button" 
+                  class="btn-close ms-2" 
+                  data-bs-dismiss="alert" 
+                  aria-label="Close"
+                  data-action="flash#dismiss">
+        </button>
+      </div>
+    </div>
+  <% end %>
+</div>
 <%= yield %>

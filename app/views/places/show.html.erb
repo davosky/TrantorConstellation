@@ -1,0 +1,45 @@
+<div class="row mt-3">
+  <div class="col-8 offset-2 p-3 bg-white border-secondary shadow rounded">
+    <div class="card border border-0">
+      <div class="card-header border-0">
+        <span class="float-start fs-4 text-info fw-bold">
+          <%= image_tag("places/places-place-info-logo.svg", class: "img-fluid", size: "56x56", alt: "stats-logo") %>
+          &nbsp;
+          Luogo
+        </span>
+        &emsp;
+        <span class="float-end">
+          <small class="text-secondary">
+            codice identificativo:
+            &emsp;
+            <%= @place.id %>
+          </small>
+        </span>
+      </div>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item fs-5 fw-bold text-info">
+            <i class="fa-solid fa-city fs-5 fw-bold"></i>
+            &nbsp;
+            Luogo
+            <span class="fs-5 fw-bold text-dark float-end">
+              <%= @place.name %>
+            </span>
+          </li>
+          <li class="list-group-item fs-5 fw-bold text-info">
+            <i class="fa-solid fa-arrow-up-9-1"></i>
+            &nbsp;
+            Posizione
+            <span class="fs-5 fw-bold text-dark float-end">
+              <%= @place.position %>
+            </span>
+          </li>
+        </ul>
+        <hr class="text-info"/>
+        <%= link_to places_path, class: "btn btn-secondary" do %>
+          Chiudi
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
