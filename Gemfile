@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", require: false
 gem "cssbundling-rails"
-gem "devise", "~> 4.9"
+gem "devise", "~> 5.0"
 gem "image_processing", "~> 1.2"
 gem "jbuilder"
 gem "jsbundling-rails"
